@@ -1,0 +1,113 @@
+@font-face {
+  font-family: "Amatic SC";
+  src: url(/fonts/Amatic_SC/AmaticSC-Regular.ttf);
+}
+
+/* global */
+
+h1,
+h2 {
+  font-family: "Amatic SC", Verdana, Geneva, Tahoma, sans-serif;
+  margin-bottom: 0px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+body {
+  font-family: "Nunito", Verdana, Geneva, Tahoma, sans-serif;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+header {
+  border-bottom: solid 5px #758593;
+  background-color: #fff;
+  position: static;
+}
+
+footer {
+  text-align: center;
+  border-top: solid 5px #758593;
+  background-color: #eaeaea;
+  padding-bottom: 10px;
+}
+
+/* header */
+
+.logo {
+  max-width: 90px;
+  height: auto;
+  margin-left: 10px;
+  display: inline;
+  float: left;
+}
+
+nav li {
+  display: inline-block;
+  margin-top: 15px;
+  margin-left: 30px;
+  font-weight: bold;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+}
+
+header a {
+  color: #373736;
+  margin: 0px;
+}
+
+nav a {
+  text-decoration: none;
+  text-align: center;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* content */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.movie__card {
+  background-image: url("images/thumbnail_love.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  max-height: auto;
+  max-width: 445px;
+  border: solid #728fb3;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.title {
+  background-image: linear-gradient(
+    to right,
+    rgb(255, 255, 255, 0),
+    rgb(255, 255, 255, 1),
+    rgb(255, 255, 255, 0)
+  );
+  text-align: center;
+  margin-top: 70px;
+}
+
+.movie__details {
+  text-align: center;
+  background-color: #fff;
+  margin-top: 85px;
+  padding: 15px 5px 15px 5px;
+}
+
+@media only screen and (min-width: 550px) {
+  .container {
+    flex-direction: row;
+  }
+}
