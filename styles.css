@@ -45,27 +45,33 @@ footer {
 nav li {
   display: inline-block;
   margin-top: 15px;
-  margin-left: 30px;
+  margin-left: 20px;
   font-weight: bold;
+  padding-left: 15px;
+}
+
+.profile {
+  float: right;
+  padding: 10px;
+  background-color: #728fb3;
+  margin-right: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
 }
 
 /* Links */
-a {
-  text-decoration: none;
-}
-
-header a {
-  color: #373736;
-  margin: 0px;
-}
 
 nav a {
   text-decoration: none;
   text-align: center;
+  color: #373736;
+  margin: 0px;
 }
 
 a:hover {
-  text-decoration: underline;
+  border: solid #728fb3;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 /* content */
@@ -74,6 +80,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  background-color: #eaeaea;
 }
 
 .movie__card {
@@ -86,6 +93,10 @@ a:hover {
   border: solid #eaeaea;
   border-radius: 5px;
   margin: 10px;
+}
+
+.movie__card:hover {
+  border: solid #728fb3;
 }
 
 .title {
@@ -104,6 +115,8 @@ a:hover {
   background-color: #fff;
   margin-top: 85px;
   padding: 15px 5px 15px 5px;
+  border-top: solid #728fb3;
+  border-bottom: solid #728fb3;
 }
 
 @media only screen and (min-width: 550px) {
