@@ -68,19 +68,18 @@ nav a {
   margin: 0px;
 }
 
-a:hover {
+nav a:hover {
   border: solid #728fb3;
   padding: 5px;
   border-radius: 5px;
 }
 
 /* content */
-
 .container {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  background-color: #eaeaea;
+  background-color: #758593;
 }
 
 .movie__card {
