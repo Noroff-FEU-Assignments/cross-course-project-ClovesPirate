@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8"/>
-        <title>Square Eyes | Home</title>
+        <title>Square Eyes | Explore Popular</title>
         <meta name="description" content="Independent Movies | Pay-per-view">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/6b9295215b.js" crossorigin="anonymous"></script>
@@ -15,78 +15,24 @@
         <header>
             <a href="index.html"><img src="images/square_eyes_logo.png" alt="logo" class="logo"></a>
             <nav>
-                <ul class="nav__desk">
-                    <li><a href="explore.html"><i class="fas fa-globe"></i>EXPLORE</a></li>
-                    <li><a href="#"><i class="fas fa-search"></i>SEARCH</a></li>
+                <ul>
+                    <li class="active"><a href="explore.html"><i class="fas fa-globe"></i>EXPLORE</a></li>
+                    <li><a href="#"><i class="fas fa-search"></i></a></li>
+                    <li><a class="profile" href="login.html">Log In<i class="fas fa-user"></i></a></li>
                 </ul>
-                <ul class="nav__mob">
-                    <li id="explore"><a href="explore.html"><i class="fas fa-globe"></i></a></li>
-                    <li id="search"><a href="#"><i class="fas fa-search"></i></a></li>
-                </ul>
-                <a class="profile" href="login.html">Log In<i class="fas fa-user"></i></a>
             </nav>
         </header>
+        <aside class="tags__nav">
+                <a href="explore_new.html">New</a>
+                <a id="active__tag" href="explore_popular.html">Popular</a>
+                <a href="explore_romance.html">Romance</a>
+                <a href="explore_thriller.html">Thriller</a>
+        </aside>
         <main>
-            <section class="promotion">
-                <div class="promotion__content">
-                <img src="images/square_eyes_logo_extended.png" alt="logo">
-                <p>Square Eyes&copy; is a new movie-platform for film-enthusiasts. Our aim is to make independent films more accessible for the viewer and easier to distribute for the creator.</p>
-                <p>Sign up to get instant access to discount subscription-based payment models!</p>
-                <a class="cta_promo" href="register.html">Sign Up!</a>
-                </div>
-            </section>
-            <br>
-            <h1>Featured filmmakers</h1>
-            <section class="featured__filmmaker">
-                <div class="filmmaker">
-                    <a href="creatorprofile.html">
-                    <span><h2>Greg Vernon</h2></span>
-                    <img src="images/profile_featured.jpg" alt="Picture of Greg Vernon">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores accusantium architecto placeat quaerat, non, vitae dolores in explicabo facere ratione sint nulla rerum veritatis aut earum corporis pariatur similique enim.</p>
-                    </a>
-                </div>
-                <div class="filmmaker">
-                    <a href="creatorprofile.html">
-                    <span><h2>Greg Vernon</h2></span>
-                    <img src="images/profile_featured.jpg" alt="Picture of Greg Vernon">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores accusantium architecto placeat quaerat, non, vitae dolores in explicabo facere ratione sint nulla rerum veritatis aut earum corporis pariatur similique enim.</p>
-                    </a>
-                </div>
-                <div class="filmmaker">
-                    <a href="creatorprofile.html">
-                    <span><h2>Greg Vernon</h2></span>
-                    <img src="images/profile_featured.jpg" alt="Picture of Greg Vernon">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores accusantium architecto placeat quaerat, non, vitae dolores in explicabo facere ratione sint nulla rerum veritatis aut earum corporis pariatur similique enim.</p>
-                    </a>
-                </div>
-                <div class="filmmaker">
-                    <a href="creatorprofile.html">
-                    <span><h2>Greg Vernon</h2></span>
-                    <img src="images/profile_featured.jpg" alt="Picture of Greg Vernon">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores accusantium architecto placeat quaerat, non, vitae dolores in explicabo facere ratione sint nulla rerum veritatis aut earum corporis pariatur similique enim.</p>
-                    </a>
-                </div>
-                <div class="filmmaker">
-                    <a href="creatorprofile.html">
-                    <span><h2>Greg Vernon</h2></span>
-                    <img src="images/profile_featured.jpg" alt="Picture of Greg Vernon">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores accusantium architecto placeat quaerat, non, vitae dolores in explicabo facere ratione sint nulla rerum veritatis aut earum corporis pariatur similique enim.</p>
-                    </a>
-                </div>
-                <div class="filmmaker">
-                    <a href="creatorprofile.html">
-                    <span><h2>Greg Vernon</h2></span>
-                    <img src="images/profile_featured.jpg" alt="Picture of Greg Vernon">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores accusantium architecto placeat quaerat, non, vitae dolores in explicabo facere ratione sint nulla rerum veritatis aut earum corporis pariatur similique enim.</p>
-                    </a>
-                </div>
-            </section>
-            <br>
-            <h1>Newly Added</h1>
             <section class="moviesection">
                 <div class="container">
                     <div class="thumbnail">
-                        <h2><a href="creatorprofile.html">By Greg Vernon</a></h2>
+                        <span><h2><a href="creatorprofile.html">By Greg Vernon</a></h2></span>
                         <a href="moviepage.html"><img src="images/thumbnail_love.jpg" alt="movieposter"></a>
                     </div>
                     <div class="container__header">
@@ -101,7 +47,7 @@
                 </div>
                 <div class="container">
                     <div class="thumbnail">
-                        <h2><a href="creatorprofile.html">By Greg Vernon</a></h2>
+                        <span><h2><a href="creatorprofile.html">By Greg Vernon</a></h2></span>
                         <a href="moviepage.html"><img src="images/thumbnail_love.jpg" alt="movieposter"></a>
                     </div>
                     <div class="container__header">
@@ -116,41 +62,7 @@
                 </div>
                 <div class="container">
                     <div class="thumbnail">
-                        <h2><a href="creatorprofile.html">By Greg Vernon</a></h2>
-                        <a href="moviepage.html"><img src="images/thumbnail_love.jpg" alt="movieposter"></a>
-                    </div>
-                    <div class="container__header">
-                        <h1>Ana's Dilemma</h1>
-                    </div>
-                    <div class="container__content">
-                        <span class="tags"><a id="romance" href="explore_romance.html">Romance</a><a id="thriller" href="explore_thriller.html">Thriller</a></span>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt sunt aspernatur quam praesentium suscipit assumenda neque dignissimos placeat odit. Porro totam ut quasi fugiat rem omnis, amet fugit alias perferendis!</p>
-                        <span id="duration">1h 32m</span>
-                        <span id="rating">Rated: Teen</span>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="thumbnail">
-                        <h2><a href="creatorprofile.html">By Greg Vernon</a></h2>
-                        <a href="moviepage.html"><img src="images/thumbnail_love.jpg" alt="movieposter"></a>
-                    </div>
-                    <div class="container__header">
-                        <h1>Ana's Dilemma</h1>
-                    </div>
-                    <div class="container__content">
-                        <span class="tags"><a id="romance" href="explore_romance.html">Romance</a><a id="thriller" href="explore_thriller.html">Thriller</a></span>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt sunt aspernatur quam praesentium suscipit assumenda neque dignissimos placeat odit. Porro totam ut quasi fugiat rem omnis, amet fugit alias perferendis!</p>
-                        <span id="duration">1h 32m</span>
-                        <span id="rating">Rated: Teen</span>
-                    </div>
-                </div>
-            </section>
-            <br>
-            <h1>Popular Now</h1>
-            <section class="moviesection">
-                <div class="container">
-                    <div class="thumbnail">
-                        <h2><a href="creatorprofile.html">By Greg Vernon</a></h2>
+                        <span><h2><a href="creatorprofile.html">By Greg Vernon</a></h2></span>
                         <a href="moviepage.html"><img src="images/thumbnail_love.jpg" alt="movieposter"></a>
                     </div>
                     <div class="container__header">

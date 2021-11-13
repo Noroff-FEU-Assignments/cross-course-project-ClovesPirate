@@ -8,119 +8,433 @@
 h1,
 h2 {
   font-family: "Amatic SC", Verdana, Geneva, Tahoma, sans-serif;
-  margin-bottom: 0px;
-  margin-top: 10px;
-  margin-left: 10px;
+  margin: 0;
+}
+
+h1 {
+  font-size: 36px;
 }
 
 body {
   font-family: "Nunito", Verdana, Geneva, Tahoma, sans-serif;
-  margin-left: 10px;
-  margin-right: 10px;
+  display: grid;
+  grid-gap: 0;
+  margin: 0;
+  padding: 0;
 }
 
-header {
-  border-bottom: solid 5px #758593;
-  background-color: #fff;
-  position: static;
+main {
+  margin: 10px;
+}
+
+header,
+footer {
+  background-color: #eaeaea;
+  height: 50px;
 }
 
 footer {
-  text-align: center;
-  border-top: solid 5px #758593;
-  background-color: #eaeaea;
-  padding-bottom: 10px;
+  height: fit-content;
+}
+
+.active {
+  background-color: #fff;
+  color: #373736;
+  padding: 15px 0;
 }
 
 /* header */
 
 .logo {
-  max-width: 90px;
-  height: auto;
-  margin-left: 10px;
-  display: inline;
+  height: 30px;
+  width: 90px;
+  margin: 10px;
+  border-right: 1px solid #373736;
   float: left;
 }
 
+/* Navigation */
+
+.tags__nav {
+  background-color: #475765;
+  display: flex;
+  overflow: scroll;
+  flex: 20%;
+  color: #fff;
+}
+
+.tags__nav a {
+  text-decoration: none;
+  color: #fff;
+  padding: 0 15px;
+  text-align: center;
+}
+#active__tag {
+  background-color: #fff;
+  padding: 0 15px;
+  color: #373736;
+}
+
+nav ul {
+  padding-inline-start: 0;
+}
+
 nav li {
-  display: inline-block;
-  margin-top: 15px;
-  margin-left: 20px;
-  font-weight: bold;
-  padding-left: 15px;
+  display: inline;
 }
 
-.profile {
-  float: right;
-  padding: 10px;
-  background-color: #728fb3;
-  margin-right: 10px;
-  margin-top: 5px;
+#explore,
+#search {
+  position: relative;
+  bottom: 1px;
+}
+
+#explore a,
+#search a {
+  background-color: #475765;
+  color: #fff;
   border-radius: 5px;
+  padding: 7px 5px 5px 9px;
+  margin-right: 1em;
+  font-size: 14px;
 }
-
-/* Links */
 
 nav a {
   text-decoration: none;
-  text-align: center;
   color: #373736;
-  margin: 0px;
+  padding: 15px;
 }
 
-nav a:hover {
-  border: solid #728fb3;
-  padding: 5px;
+.profile {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  margin: 0;
+  background-color: #475765;
+  color: #fff;
+  padding: 5px 10px;
   border-radius: 5px;
 }
 
-/* content */
-
-.container {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  background-color: #758593;
+li i {
+  margin-right: 5px;
 }
 
-.movie__card {
-  background-image: url("images/thumbnail_love.jpg");
+.profile i {
+  margin-left: 10px;
+}
+
+.nav__desk {
+  display: none;
+}
+
+/* front page */
+
+.promotion {
+  background-image: url(images/promo_background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: bottom;
-  max-height: auto;
-  max-width: 445px;
-  border: solid #eaeaea;
+  background-position-x: right;
+  background-position-y: center;
+  min-height: 92vh;
+  position: relative;
+}
+
+.promotion img {
+  height: 60px;
+  width: 140px;
+  margin-top: 0.5em;
+}
+
+.promotion__content {
+  text-align: center;
+  position: relative;
+  top: 5em;
+  background-color: #fff;
+  border-top: solid #475765;
+  border-bottom: solid #475765;
+  padding: 5px 10px;
+  margin: 0;
+}
+
+.cta_promo {
+  text-decoration: none;
+  font-size: 30px;
+  background-color: #475765;
+  color: #fff;
+  padding: 0.3em 1.5em;
+  position: relative;
+  top: 0.9em;
   border-radius: 5px;
+}
+
+.featured__filmmaker {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filmmaker {
+  flex: 20%;
+  box-sizing: border-box;
+  text-align: center;
   margin: 10px;
 }
 
-.movie__card:hover {
-  border: solid #728fb3;
+.filmmaker img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
 }
 
-.title {
-  background-image: linear-gradient(
-    to right,
-    rgb(255, 255, 255, 0),
-    rgb(255, 255, 255, 1),
-    rgb(255, 255, 255, 0)
-  );
+.filmmaker h2,
+.thumbnail h2 {
+  display: inline;
+  background-color: #eaeaea;
+  position: relative;
+  top: 0.5em;
+  padding: 5px 15px;
+}
+
+.filmmaker a {
+  text-decoration: none;
+  color: #373736;
+}
+
+.filmmaker p {
+  margin: 5px 10px;
+}
+
+/* explore */
+
+.moviesection {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.thumbnail h2 a {
+  text-decoration: none;
+  color: #373736;
+}
+
+.container {
+  flex: 20%;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 8px;
   text-align: center;
-  margin-top: 70px;
 }
 
-.movie__details {
+.thumbnail img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.container__header {
+  border-bottom: solid 2px #373736;
+}
+
+.container__header h1 {
+  background-color: #fff;
+  margin: 0;
+}
+
+.tags a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #475765;
+  font-size: 12px;
+  padding: 1px 7px;
+  margin-right: 5px;
+  text-align: right;
+}
+
+#duration,
+#rating {
+  background-color: #373736;
+  color: #fff;
+  font-size: 10px;
+  border-radius: 25px;
+  margin: 3px 1px;
+  padding: 1px 7px;
+  float: right;
+}
+
+.container__content p {
+  text-align: center;
+  margin: 8px;
+}
+
+/* Movie Page */
+
+.moviepage {
+  background-image: url(images/Anasdilemma_moviepage.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: left;
+  background-position-y: center;
+  min-height: 90.5vh;
+  position: relative;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.moviepage__header {
+  text-align: right;
+  margin-right: 10%;
+  position: relative;
+  top: 3em;
+}
+
+.moviepage__header a {
+  text-decoration: none;
+  color: #475765;
+}
+
+.moviepage__info {
+  width: 14em;
+  float: right;
+  margin: 3em 9% 0 9%;
+  background-color: #fff;
+  padding: 2em 2em 3em 2em;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.moviepage__cta {
+  position: absolute;
+  top: 29.1em;
+  right: 17%;
+}
+
+.moviepage__cta a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #475765;
+  padding: 5px 15px;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.moviepage__cta i {
+  margin-right: 0.5em;
+}
+
+/* form */
+
+form {
+  background-image: url("images/promo_background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: left;
+  background-position-y: center;
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+.form__container {
   text-align: center;
   background-color: #fff;
-  margin-top: 85px;
-  padding: 15px 5px 15px 5px;
-  border-top: solid #728fb3;
-  border-bottom: solid #728fb3;
+  border: solid 2px #475765;
+  border-radius: 5px;
+  padding: 1em 2em;
+  margin: 4em 0;
 }
 
-@media only screen and (min-width: 550px) {
-  .container {
-    flex-direction: row;
+label {
+  display: block;
+  margin-top: 1em;
+}
+
+input,
+select {
+  text-align: center;
+  border: dashed 1px #475765;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 3px;
+}
+
+button {
+  background-color: #475765;
+  color: #fff;
+  border-radius: 5px;
+  padding: 3px 10px;
+  margin-top: 0.5em;
+}
+
+.form__container a {
+  color: #475765;
+  text-decoration: none;
+}
+
+/* footer */
+
+.footer_contact {
+  text-align: center;
+  margin: 1em;
+}
+
+footer a {
+  color: #475765;
+  text-decoration: none;
+  font-size: 30px;
+  margin: 0 2%;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+
+.logo__container {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: 1em;
+}
+
+footer img {
+  height: 50px;
+  width: 120px;
+}
+
+/* hover */
+
+a:hover {
+  background-color: #fff;
+  color: #373736;
+}
+
+.filmmaker img:hover,
+.thumbnail img:hover {
+  width: 101%;
+  height: auto;
+}
+
+@media only screen and (max-width: 1200px) {
+  .container,
+  .filmmaker {
+    flex: 40%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container,
+  .filmmaker {
+    flex: 100%;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .nav__desk {
+    display: inline-block;
+  }
+
+  .nav__mob {
+    display: hidden;
   }
 }

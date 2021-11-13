@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Square Eyes | Purchase</title>
+        <meta name="description" content="Independent Movies | Pay-per-view">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/6b9295215b.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <a href="index.html"><img src="images/square_eyes_logo.png" alt="logo" class="logo"></a>
+            <nav>
+                <ul>
+                    <li><a href="explore.html"><i class="fas fa-globe"></i>EXPLORE</a></li>
+                    <li><a href="#"><i class="fas fa-search"></i></a></li>
+                    <li><a class="profile" href="login.html">Log In<i class="fas fa-user"></i></a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+        <form action="index.html" method="post">
+            <div class="form__container">
+                <h1>Ana's Dilemma</h1>
+                <p>Your credit card information</p>
+            <label for="card-name">Name on Card</label>
+            <input type="text" placeholder="Ola Nordmann" name="card-name" id="card-name" required>
+            <label for="cc-number">Credit Card Number</label>
+            <input type="text" placeholder="1111-2222-3333-4444" name="cc-number" id="cc-number" required>
+            <label for="exp-date">Expiration date</label>
+            <input type="text" placeholder="august" name="exp-date" id="exp-date" required>
+            <label for="cvv">CVV</label>
+            <input type="text" placeholder="332" name="cvv" id="cvv" required>
+            <hr>
+            <p>Paymement total: $ 8.99</p>
+            <button type="submit" class="form_cta">Purchase</button>
+        </form>
+        </main>
+        <footer>
+            <div class="footer_contact">
+                <a href="#"><i class="fas fa-envelope"></i></a>
+                <a href="#"><i class="fab fa-twitter-square"></i></a>
+                <a href="#"><i class="fab fa-facebook-square"></i></a>
+                <a href="#"><i class="fab fa-instagram-square"></i></a>
+            </div>
+            <div class="logo__container">
+            <a href="index.html"><img src="images/square_eyes_logo_extended.png" alt="logo"> &copy;</a>
+            </div>
+        </footer>
+    </body>
+</html>
