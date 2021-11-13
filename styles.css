@@ -293,6 +293,7 @@ li i {
 
 .moviepage__info {
   width: 14em;
+  height: 100%;
   float: right;
   margin: 3em 9% 0 9%;
   background-color: #fff;
