@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8"/>
         <title>Square Eyes | Greg Vernon</title>
-        <meta name="description" content="Independent Movies | Pay-per-view">
+        <meta name="description" content="Greg Vernon, filmmaker | Square Eyes">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/6b9295215b.js" crossorigin="anonymous"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com"> 
@@ -15,11 +15,15 @@
         <header>
             <a href="index.html"><img src="images/square_eyes_logo.png" alt="logo" class="logo"></a>
             <nav>
-                <ul>
+                <ul class="nav__desk">
                     <li><a href="explore.html"><i class="fas fa-globe"></i>EXPLORE</a></li>
-                    <li><a href="#"><i class="fas fa-search"></i></a></li>
-                    <li><a class="profile" href="login.html">Log In<i class="fas fa-user"></i></a></li>
+                    <li><a href="#"><i class="fas fa-search"></i>SEARCH</a></li>
                 </ul>
+                <ul class="nav__mob">
+                    <li id="explore"><a href="explore.html"><i class="fas fa-globe"></i></a></li>
+                    <li id="search"><a href="#"><i class="fas fa-search"></i></a></li>
+                </ul>
+                <a class="profile" href="login.html">Log In<i class="fas fa-user"></i></a>
             </nav>
         </header>
         <main>
@@ -27,12 +31,16 @@
                 <div class="filmmaker">
                     <span><h2>Greg Vernon</h2></span>
                     <img src="images/profile_featured.jpg" alt="Picture of Greg Vernon">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores accusantium architecto placeat quaerat, non, vitae dolores in explicabo facere ratione sint nulla rerum veritatis aut earum corporis pariatur similique enim.</p>
-                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis cumque, odit commodi qui vel dignissimos corporis quos officia a. Quis qui laborum quam minus, eligendi porro quibusdam vitae impedit debitis.</p>
+                    <div class="filmmaker__content">
+                        <h3>About Me</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores accusantium architecto placeat quaerat, non, vitae dolores in explicabo facere ratione sint nulla rerum veritatis aut earum corporis pariatur similique enim. Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis cumque, odit commodi qui vel dignissimos corporis quos officia a. Quis qui laborum quam minus, eligendi porro quibusdam vitae impedit debitis.</p>
+                    <h3>My interests</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores accusantium architecto placeat quaerat, non, vitae dolores in explicabo facere ratione sint nulla rerum veritatis aut earum corporis pariatur similique enim. Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis cumque, odit commodi qui vel dignissimos corporis quos officia a. Quis qui laborum quam minus, eligendi porro quibusdam vitae impedit debitis.</p>
+                    </div>
                 </div>
             </section>
             <br>
-            <h1>Films by Greg Vernon</h1>
+            <h1 id="title">Films by Greg Vernon</h1>
             <section class="moviesection">
                 <div class="container">
                     <div class="thumbnail">
@@ -94,11 +102,6 @@
                         <span id="rating">Rated: Teen</span>
                     </div>
                 </div>
-                <div class="container">
-                    <div class="thumbnail">
-                        <span><h2><a href="creatorprofile.html">By Greg Vernon</a></h2></span>
-                        <a href="moviepage.html"><img src="images/thumbnail_love.jpg" alt="movieposter"></a>
-                    </div>
             </section>
         </main>
         <footer>

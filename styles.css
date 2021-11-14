@@ -3,6 +3,13 @@
   src: url(/fonts/Amatic_SC/AmaticSC-Regular.ttf);
 }
 
+:root {
+  --style-color: #475765;
+  --dark-color: #373736;
+  --light-color: #fff;
+  --accent-color: #eaeaea;
+}
+
 /* global */
 
 h1,
@@ -29,7 +36,7 @@ main {
 
 header,
 footer {
-  background-color: #eaeaea;
+  background-color: var(--accent-color);
   height: 50px;
 }
 
@@ -38,9 +45,15 @@ footer {
 }
 
 .active {
-  background-color: #fff;
-  color: #373736;
+  background-color: var(--light-color);
+  color: var(--dark-color);
   padding: 15px 0;
+}
+
+#title {
+  margin-top: 1em;
+  text-align: center;
+  border-bottom: dashed 1px var(--style-color);
 }
 
 /* header */
@@ -49,14 +62,14 @@ footer {
   height: 30px;
   width: 90px;
   margin: 10px;
-  border-right: 1px solid #373736;
+  border-right: 1px solid var(--dark-color);
   float: left;
 }
 
 /* Navigation */
 
 .tags__nav {
-  background-color: #475765;
+  background-color: var(--style-color);
   display: flex;
   overflow: scroll;
   flex: 20%;
@@ -65,14 +78,14 @@ footer {
 
 .tags__nav a {
   text-decoration: none;
-  color: #fff;
+  color: var(--light-color);
   padding: 0 15px;
   text-align: center;
 }
 #active__tag {
-  background-color: #fff;
+  background-color: var(--light-color);
   padding: 0 15px;
-  color: #373736;
+  color: var(--dark-color);
 }
 
 nav ul {
@@ -87,21 +100,27 @@ nav li {
 #search {
   position: relative;
   bottom: 1px;
+  text-align: center;
 }
 
 #explore a,
 #search a {
   background-color: #475765;
-  color: #fff;
+  color: var(--light-color);
   border-radius: 5px;
   padding: 7px 5px 5px 9px;
   margin-right: 1em;
   font-size: 14px;
 }
 
+#search a {
+  padding: 7px 4% 5px 5%;
+  text-align: ;
+}
+
 nav a {
   text-decoration: none;
-  color: #373736;
+  color: var(--dark-color);
   padding: 15px;
 }
 
@@ -110,8 +129,8 @@ nav a {
   right: 15px;
   top: 10px;
   margin: 0;
-  background-color: #475765;
-  color: #fff;
+  background-color: var(--style-color);
+  color: var(--light-color);
   padding: 5px 10px;
   border-radius: 5px;
 }
@@ -150,9 +169,9 @@ li i {
   text-align: center;
   position: relative;
   top: 5em;
-  background-color: #fff;
-  border-top: solid #475765;
-  border-bottom: solid #475765;
+  background-color: var(--light-color);
+  border-top: solid var(--style-color);
+  border-bottom: solid var(--style-color);
   padding: 5px 10px;
   margin: 0;
 }
@@ -160,8 +179,8 @@ li i {
 .cta_promo {
   text-decoration: none;
   font-size: 30px;
-  background-color: #475765;
-  color: #fff;
+  background-color: var(--style-color);
+  color: var(--light-color);
   padding: 0.3em 1.5em;
   position: relative;
   top: 0.9em;
@@ -189,7 +208,7 @@ li i {
 .filmmaker h2,
 .thumbnail h2 {
   display: inline;
-  background-color: #eaeaea;
+  background-color: var(--accent-color);
   position: relative;
   top: 0.5em;
   padding: 5px 15px;
@@ -197,11 +216,12 @@ li i {
 
 .filmmaker a {
   text-decoration: none;
-  color: #373736;
+  color: var(--dark-color);
 }
 
 .filmmaker p {
   margin: 5px 10px;
+  text-align: left;
 }
 
 /* explore */
@@ -213,7 +233,7 @@ li i {
 
 .thumbnail h2 a {
   text-decoration: none;
-  color: #373736;
+  color: var(--dark-color);
 }
 
 .container {
@@ -231,18 +251,18 @@ li i {
 }
 
 .container__header {
-  border-bottom: solid 2px #373736;
+  border-bottom: solid 2px var(--dark-color);
 }
 
 .container__header h1 {
-  background-color: #fff;
+  background-color: var(--light-color);
   margin: 0;
 }
 
 .tags a {
   text-decoration: none;
-  color: #fff;
-  background-color: #475765;
+  color: var(--light-color);
+  background-color: var(--style-color);
   font-size: 12px;
   padding: 1px 7px;
   margin-right: 5px;
@@ -251,8 +271,8 @@ li i {
 
 #duration,
 #rating {
-  background-color: #373736;
-  color: #fff;
+  background-color: var(--dark-color);
+  color: var(--light-color);
   font-size: 10px;
   border-radius: 25px;
   margin: 3px 1px;
@@ -288,7 +308,7 @@ li i {
 
 .moviepage__header a {
   text-decoration: none;
-  color: #475765;
+  color: var(--style-color);
 }
 
 .moviepage__info {
@@ -296,9 +316,8 @@ li i {
   height: 55vh;
   float: right;
   margin: 0 9%;
-  background-color: #fff;
-  padding: 2em 2em 3em 2em;
-  background: rgb(255, 255, 255);
+  padding: 3em 2em 3em 2em;
+  background: var(--light-color);
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0) 0%,
@@ -313,8 +332,8 @@ li i {
 
 .moviepage__cta a {
   text-decoration: none;
-  color: #fff;
-  background-color: #475765;
+  color: var(--light-color);
+  background-color: var(--style-color);
   padding: 5px 15px;
   font-size: 20px;
   border-radius: 5px;
@@ -339,8 +358,8 @@ form {
 
 .form__container {
   text-align: center;
-  background-color: #fff;
-  border: solid 2px #475765;
+  background-color: var(--light-color);
+  border: solid 2px var(--style-color);
   border-radius: 5px;
   padding: 1em 2em;
   margin: 4em 0;
@@ -354,22 +373,22 @@ label {
 input,
 select {
   text-align: center;
-  border: dashed 1px #475765;
+  border: dashed 1px var(--style-color);
   border-radius: 5px;
   font-size: 16px;
   padding: 3px;
 }
 
 button {
-  background-color: #475765;
-  color: #fff;
+  background-color: var(--style-color);
+  color: var(--light-color);
   border-radius: 5px;
   padding: 3px 10px;
   margin-top: 0.5em;
 }
 
 .form__container a {
-  color: #475765;
+  color: var(--style-color);
   text-decoration: none;
 }
 
@@ -381,7 +400,7 @@ button {
 }
 
 footer a {
-  color: #475765;
+  color: var(--style-color);
   text-decoration: none;
   font-size: 30px;
   margin: 0 2%;
@@ -404,8 +423,8 @@ footer img {
 /* hover */
 
 a:hover {
-  background-color: #fff;
-  color: #373736;
+  background-color: var(--light-color);
+  color: var(--dark-color);
 }
 
 .filmmaker img:hover,
@@ -434,6 +453,6 @@ a:hover {
   }
 
   .nav__mob {
-    display: hidden;
+    display: none;
   }
 }
