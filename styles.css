@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Amatic SC";
-  src: url(/fonts/Amatic_SC/AmaticSC-Regular.ttf);
+  src: url(fonts/Amatic_SC/AmaticSC-Regular.ttf);
 }
 
 :root {
@@ -47,7 +47,6 @@ footer {
 .active {
   background-color: var(--light-color);
   color: var(--dark-color);
-  padding: 15px 0;
 }
 
 #title {
@@ -103,19 +102,17 @@ nav li {
   text-align: center;
 }
 
+#explore {
+  margin: 0 10px;
+}
+
 #explore a,
 #search a {
   background-color: #475765;
   color: var(--light-color);
-  border-radius: 5px;
-  padding: 7px 5px 5px 9px;
-  margin-right: 1em;
+  border-radius: 50%;
+  padding: 7px 4.5px 5px 9px;
   font-size: 14px;
-}
-
-#search a {
-  padding: 7px 4% 5px 5%;
-  text-align: ;
 }
 
 nav a {
@@ -199,10 +196,12 @@ li i {
   margin: 10px;
 }
 
-.filmmaker img {
-  width: 100%;
+.filmmaker img,
+.thumbnail img {
+  width: 98%;
   height: auto;
   border-radius: 5px;
+  transition: width ease 1s;
 }
 
 .filmmaker h2,
@@ -242,12 +241,6 @@ li i {
   padding: 0;
   margin: 8px;
   text-align: center;
-}
-
-.thumbnail img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
 }
 
 .container__header {
@@ -429,7 +422,7 @@ a:hover {
 
 .filmmaker img:hover,
 .thumbnail img:hover {
-  width: 101%;
+  width: 100%;
   height: auto;
 }
 
