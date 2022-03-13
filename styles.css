@@ -1,8 +1,3 @@
-@font-face {
-  font-family: "Amatic SC";
-  src: url(fonts/Amatic_SC/AmaticSC-Regular.ttf);
-}
-
 :root {
   --style-color: #475765;
   --dark-color: #373736;
@@ -12,49 +7,72 @@
 
 /* global */
 
-h1,
-h2 {
-  font-family: "Amatic SC", Verdana, Geneva, Tahoma, sans-serif;
-  margin: 0;
-}
-
-h1 {
-  font-size: 36px;
-}
-
 body {
   font-family: "Nunito", Verdana, Geneva, Tahoma, sans-serif;
   display: grid;
   grid-gap: 0;
   margin: 0;
   padding: 0;
-  min-height: 800px;
 }
 
-main {
-  margin: 10px;
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+h2 {
+  font-size: 36px;
+  margin-top: 2em;
+  font-weight: normal;
+  text-align: center;
+  position: relative;
+  top: 0.5em;
+  font-family: "Courier New", Courier, monospace;
+}
+
+h3 {
+  font-size: 25px;
+  text-align: center;
+  font-family: "Nunito", Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: lighter;
+}
+
+p {
+  margin: 0;
+}
+
+p a {
+  text-decoration: none;
+  color: var(--style-color);
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  justify-content: center;
 }
 
 header,
 footer {
   background-color: var(--accent-color);
-  height: 50px;
+  height: 40px;
+  border-radius: 5px;
+  width: 80%;
+  position: sticky;
+  margin: auto;
+  top: 1em;
+  z-index: 99;
+  box-shadow: 0 0 10px 1px var(--style-color);
 }
 
 footer {
   height: fit-content;
-}
-
-.active {
-  background-color: var(--light-color);
-  color: var(--dark-color);
-}
-
-#title {
-  margin: 1em 0 1em 0;
-  text-align: center;
-  box-shadow: 0 0 10px 1px rgb(173, 173, 173);
-  border-radius: 10px;
+  border-radius: 5px;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 /* header */
@@ -62,9 +80,14 @@ footer {
 .logo {
   height: 30px;
   width: 90px;
-  margin: 10px;
+  margin: 5px 5px 0 5px;
   border-right: 1px solid var(--dark-color);
   float: left;
+}
+
+.logo:hover {
+  cursor: pointer;
+  opacity: 80%;
 }
 
 /* Navigation */
@@ -73,92 +96,46 @@ footer {
   background-color: var(--style-color);
   display: flex;
   overflow: scroll;
-  flex: 20%;
   color: #fff;
+  position: relative;
+  border-radius: 5px;
+  width: 100%;
+  top: 10px;
+  box-shadow: 0px 1px 10px var(--style-color);
 }
 
 .tags__nav a {
   text-decoration: none;
   color: var(--light-color);
   padding: 0 15px;
-  text-align: center;
-}
-#active__tag {
-  background-color: var(--light-color);
-  padding: 0 15px;
-  color: var(--dark-color);
 }
 
-nav ul {
-  padding-inline-start: 0;
-}
-
-nav li {
-  display: inline;
-}
-
-#explore,
-#search {
-  position: relative;
-  bottom: 1px;
-  text-align: center;
-}
-
-#explore {
-  margin: 0 10px;
-}
-
-#explore a,
-#search a {
-  background-color: #475765;
-  color: var(--light-color);
-  border-radius: 50%;
-  padding: 7px 4.5px 5px 9px;
-  font-size: 14px;
-}
-
-nav a {
-  text-decoration: none;
-  color: var(--dark-color);
-  padding: 15px;
+.active__tag {
+  border-bottom: solid 2px var(--light-color);
 }
 
 .profile {
   position: absolute;
-  right: 15px;
-  top: 10px;
+  right: 7px;
+  top: 4.5px;
   margin: 0;
   background-color: var(--style-color);
   color: var(--light-color);
-  padding: 5px 10px;
+  padding: 4px 9px;
   border-radius: 5px;
-}
-
-li i {
-  margin-right: 5px;
 }
 
 .profile i {
   margin-left: 10px;
 }
 
-.nav__desk {
-  display: none;
+.profile a {
+  text-decoration: none;
 }
 
 /* front page */
 
-.promotion {
-  background-image: url(images/promo_background.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position-x: right;
-  background-position-y: center;
-  min-height: 92vh;
-  position: relative;
-}
-
-.promotion img {
+.promo img {
   height: 60px;
   width: 140px;
   margin-top: 0.5em;
@@ -169,10 +146,10 @@ li i {
   position: relative;
   top: 5em;
   background-color: var(--light-color);
-  border-top: solid var(--style-color);
-  border-bottom: solid var(--style-color);
+  border: solid var(--style-color);
+  border-radius: 5px;
   padding: 5px 10px;
-  margin: 0;
+  margin: 0 0 3em 0;
 }
 
 .cta_promo {
@@ -191,6 +168,11 @@ li i {
   flex-wrap: wrap;
 }
 
+.featured p {
+  text-align: center;
+  margin: 1em;
+}
+
 .filmmaker {
   flex: 20%;
   box-sizing: border-box;
@@ -198,121 +180,69 @@ li i {
   margin: 10px;
 }
 
+.filmmaker__content h3 {
+  margin-top: 1em;
+}
+
 .filmmaker img,
 .thumbnail img {
-  width: 98%;
+  width: 100%;
   height: auto;
-  border-radius: 5px;
   transition: opacity ease 1s;
-}
-
-.filmmaker h2,
-.thumbnail h2 {
-  display: inline;
-  background-color: var(--accent-color);
-  position: relative;
-  top: 0.5em;
-  padding: 5px 15px;
-  z-index: 1;
-}
-
-.filmmaker a {
-  text-decoration: none;
-  color: var(--dark-color);
-}
-
-.filmmaker p {
-  margin: 5px 10px;
-  text-align: left;
 }
 
 /* explore */
 
-.moviesection {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.thumbnail h2 a {
-  text-decoration: none;
-  color: var(--dark-color);
-}
-
-.container {
+.card {
   flex: 20%;
-  box-sizing: border-box;
-  padding: 0;
-  margin: 8px;
+  box-shadow: 0 0 10px 1px var(--accent-color);
   text-align: center;
-}
-
-.container__header {
-  border-bottom: solid 2px var(--dark-color);
-}
-
-.container__header h1 {
-  background-color: var(--light-color);
-  margin: 0;
-}
-
-.tags a {
-  text-decoration: none;
-  color: var(--light-color);
-  background-color: var(--style-color);
-  font-size: 12px;
-  padding: 1px 7px;
-  margin-right: 5px;
-  text-align: right;
-}
-
-#duration,
-#rating {
-  background-color: var(--dark-color);
-  color: var(--light-color);
-  font-size: 10px;
-  border-radius: 25px;
-  margin: 3px 1px;
-  padding: 1px 7px;
-  float: right;
-}
-
-.container__content p {
-  text-align: center;
-  margin: 8px;
-}
-
-/* Movie Page */
-
-.moviepage {
-  background-image: url(images/Anasdilemma_moviepage.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position-x: left;
-  background-position-y: center;
-  min-height: 90.5vh;
-  position: relative;
-  box-sizing: border-box;
+  margin: 1em;
   border-radius: 5px;
+  background-color: var(--light-color);
 }
 
-.moviepage__header {
-  text-align: right;
-  margin-right: 10%;
-  position: relative;
-  top: 3em;
-}
-
-.moviepage__header a {
+.card a {
   text-decoration: none;
   color: var(--style-color);
 }
 
-.moviepage__info {
-  width: 14em;
-  height: 55vh;
+.thumbnail img {
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+}
+
+.title {
+  position: relative;
+  top: -0.3em;
+}
+
+.tags a {
+  background-color: var(--style-color);
+  text-decoration: none;
+  color: var(--light-color);
+  margin: 5px;
+  padding: 2px 4px;
+  border-radius: 5px;
+  font-size: 12px;
+  position: relative;
+  top: -5px;
+}
+
+/* Movie Page */
+
+.movie_background {
+  background-image: url(images/Anasdilemma_moviepage.jpg);
+  background-repeat: no-repeat;
+  background-position-y: center;
+}
+
+.container__moviepage {
   float: right;
-  margin: 0 9%;
-  padding: 3em 2em 3em 2em;
+  position: relative;
+  right: 10%;
+  width: 20em;
+  height: 90vh;
   background: var(--light-color);
   background: linear-gradient(
     180deg,
@@ -322,8 +252,28 @@ li i {
   );
 }
 
+.moviepage__header {
+  position: relative;
+  top: 15vh;
+  text-align: right;
+  margin-right: 2em;
+}
+
+.moviepage__header a {
+  text-decoration: none;
+  color: var(--style-color);
+}
+
+.moviepage__info {
+  position: relative;
+  top: 15vh;
+  text-align: left;
+  margin: 2em 2em;
+}
+
 .moviepage__cta {
-  margin: 5em 0 0 55px;
+  text-align: center;
+  margin-top: 10em;
 }
 
 .moviepage__cta a {
@@ -341,24 +291,21 @@ li i {
 
 /* form */
 
-form {
+.form_background {
   background-image: url("images/promo_background.jpg");
-  background-repeat: no-repeat;
   background-size: cover;
-  background-position-x: left;
   background-position-y: center;
-  display: flex;
-  position: relative;
-  justify-content: center;
+  background-position-x: center;
+  background-repeat: no-repeat;
 }
 
 .form__container {
   text-align: center;
-  background-color: var(--light-color);
-  border: solid 2px var(--style-color);
+  background-color: var(--accent-color);
   border-radius: 5px;
-  padding: 1em 2em;
-  margin: 4em 0;
+  padding: 1em 0;
+  margin: 7em 20% 3em 20%;
+  box-shadow: 0 0 10px 1px var(--style-color);
 }
 
 label {
@@ -366,10 +313,13 @@ label {
   margin-top: 1em;
 }
 
+form p {
+  margin-top: 7px;
+}
 input,
 select {
   text-align: center;
-  border: dashed 1px var(--style-color);
+  border: solid 1px var(--style-color);
   border-radius: 5px;
   font-size: 16px;
   padding: 3px;
@@ -381,6 +331,7 @@ button {
   border-radius: 5px;
   padding: 3px 10px;
   margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 .form__container a {
@@ -424,30 +375,26 @@ a:hover {
 }
 
 .filmmaker img:hover,
-.thumbnail img:hover {
-  opacity: 70%;
+.card:hover {
+  opacity: 80%;
 }
 
-@media only screen and (max-width: 1200px) {
-  .container,
-  .filmmaker {
+@media only screen and (max-width: 910px) {
+  .card {
     flex: 40%;
+  }
+
+  .movie_background {
+    background-position-x: 20%;
+    background-position-y: 35%;
   }
 }
 
 @media only screen and (max-width: 600px) {
-  .container,
-  .filmmaker {
+  .card {
     flex: 100%;
   }
-}
-
-@media only screen and (min-width: 600px) {
-  .nav__desk {
-    display: inline-block;
-  }
-
-  .nav__mob {
-    display: none;
+  .form__container {
+    margin: 7em 10% 3em 10%;
   }
 }
