@@ -135,6 +135,10 @@ footer {
 
 /* front page */
 
+.promo {
+  margin: 0 5% 4em 5%;
+}
+
 .promo img {
   height: 60px;
   width: 140px;
@@ -166,6 +170,15 @@ footer {
 .featured__filmmaker {
   display: flex;
   flex-wrap: wrap;
+}
+
+.featured {
+  width: 60%;
+  margin: auto;
+}
+
+.featured__title {
+  margin-top: 4em;
 }
 
 .featured p {
@@ -384,6 +397,10 @@ a:hover {
     flex: 40%;
   }
 
+  .form__container {
+    margin: 9em 10% 3em 10%;
+  }
+
   .movie_background {
     background-position-x: 20%;
     background-position-y: 35%;
@@ -394,7 +411,11 @@ a:hover {
   .card {
     flex: 100%;
   }
-  .form__container {
-    margin: 7em 10% 3em 10%;
+}
+
+@media only screen and (min-width: 1980px) {
+  body {
+    width: 1980px;
+    margin: auto;
   }
 }
