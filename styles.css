@@ -332,9 +332,11 @@ label {
   margin-top: 1em;
 }
 
-form p {
+form p,
+form h1 {
   margin: 5px 10px;
 }
+
 input,
 select {
   text-align: center;
