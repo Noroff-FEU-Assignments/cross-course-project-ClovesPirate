@@ -73,11 +73,19 @@ footer {
   box-shadow: 0 0 10px 1px var(--style-color);
 }
 
+header {
+  margin-top: 3em;
+}
+
 footer {
   height: fit-content;
   border-radius: 5px;
   margin-top: 2em;
   margin-bottom: 2em;
+}
+
+.content h3 {
+  margin-top: 0.1em;
 }
 
 /* header */
@@ -141,7 +149,7 @@ footer {
 /* front page */
 
 .promo {
-  margin: 0 5% 4em 5%;
+  margin: 2em 5% 4em 5%;
 }
 
 .promo img {
@@ -181,6 +189,14 @@ footer {
 .featured {
   width: 60%;
   margin: auto;
+}
+
+.featured h3 {
+  margin-top: 0.5em;
+}
+
+.featured p {
+  padding-bottom: 1em;
 }
 
 .featured__title {
@@ -229,6 +245,8 @@ footer {
 .thumbnail img {
   width: 100%;
   border-radius: 5px 5px 0 0;
+  transition: opacity ease 1s;
+  border-bottom: 5px solid var(--style-color);
 }
 
 .title {
@@ -236,16 +254,21 @@ footer {
   top: -0.3em;
 }
 
+.title p {
+  position: relative;
+  bottom: 5px;
+}
+
 .tags a {
   background-color: var(--style-color);
   text-decoration: none;
   color: var(--light-color);
-  margin: 5px;
+  margin-right: 10px;
   padding: 2px 4px;
   border-radius: 5px;
-  font-size: 12px;
+  font-size: 10px;
   position: relative;
-  top: -5px;
+  bottom: 5px;
 }
 
 /* Movie Page */
@@ -349,7 +372,7 @@ select {
 button {
   background-color: var(--style-color);
   color: var(--light-color);
-  margin-top: 0.7em;
+  margin-top: 2em;
   margin-bottom: 0.7em;
   width: 100%;
   height: 2em;
