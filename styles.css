@@ -94,7 +94,6 @@ footer {
   height: 30px;
   width: 90px;
   margin: 5px 5px 0 5px;
-  border-right: 1px solid var(--dark-color);
   float: left;
 }
 
