@@ -1,39 +1,23 @@
-const container = document.querySelector("main");
+const container = document.querySelector(".confirmation");
 const profile = document.querySelector(".profile")
-
-function onSubmit(event) {
-
-  const form = event.target;
-  const user = form.username.value;
-  
-  if (form.invalid) {
-    event.preventDefault();
-  }
-  else {
-  return container.innerHTML = `<div class="success">
-                                <a href="index.html"><img src="images/square_eyes_logo.png" alt="logo"></a>
-                                  <div>
-                                    Welcome ${user}
-                                  </div>
-                                </div>`;
-  }           
-};
 
 const openModalButtons = document.querySelectorAll("[data-modal-target]");
 const closeModalButtons = document.querySelectorAll("[data-close-button]");
 const overlay = document.getElementById("overlay");
 const register = document.getElementById("login-register");
+const validation = document.getElementById("validated");
 
-openModalButtons.forEach(button => {
+openModalButtons.forEach(button => { // This code to open modals
   button.addEventListener("click", () => {
     const modal = document.querySelector(button.dataset.modalTarget);
+    console.log("1"); // testing output
     openModal(modal);
   })
 });
 
 register.addEventListener("click", () => {
   const login = document.getElementById("login");
-  closeModalLogin(login);
+  closeModalOnly(login);
 });
 
 overlay.addEventListener("click", () => {
@@ -62,7 +46,37 @@ function closeModal(modal) {
   overlay.classList.remove("active");
 };
 
-function closeModalLogin(modal) {
+function closeModalOnly(modal) {
   if (modal === null) return
   modal.classList.remove("active");
 };
+
+function validateForm(event) {
+
+  const form = event.target;
+  const user = form.name.value;
+  
+  if (form.invalid) {
+    event.preventDefault();
+  } else {
+    form.style.transform = "scale(1.5)";
+    form.style.margin = "2em";
+    return form.innerHTML = `Welcome ${user}`;
+  }
+};
+
+function validateFilm(event) {
+
+  const form = event.target;
+  const user = form.name.value;
+  
+  if (form.invalid) {
+    event.preventDefault();
+  } else {
+    form.style.transform = "scale(1.5)";
+    form.style.margin = "2em";
+    return form.innerHTML = `Thank you for your purchase!`;
+  }
+};
+
+

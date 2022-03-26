@@ -1,5 +1,9 @@
+import { simpleFetch } from "./utils/components.js";
+
 const detailsContainer = document.querySelector(".top-section");
 const suggestContainer = document.querySelector(".bottom-section");
+const errorMain = document.querySelector("main");
+const purchaseButton = document.querySelector(".purchase__button");
 
 const searchArray =["earth", "journey", "alien", "fly", "sad", "death", "dragon", "cat", "storm", "family", "avenger, "];
 const randomElement = [Math.floor(Math.random() * searchArray.length)];
@@ -19,14 +23,6 @@ console.log(id);
 const url = 'https://imdb-data-searching.p.rapidapi.com/om?i=' + id;
 const suggestionURL = 'https://imdb-data-searching.p.rapidapi.com/om?s=' + searchParams;
 
-async function simpleFetch(url, headers) {
-  const response = await fetch(url, headers);
-  if (response.ok) {
-    return await response.json();
-  }
-  throw new Error(`${response.status} ${response.statusText}`);
-}
-
 
 async function callDetails() {
   try {
@@ -34,48 +30,49 @@ async function callDetails() {
   const movieSuggestions = await simpleFetch(suggestionURL, options);
   console.log(movieSuggestions);
 
-
-  createHtml(movieDetails);
-  forLoop(movieSuggestions.Search, suggestContainer);
+  purchaseButton.style.display = "flex";
+  renderFilmDetails(movieDetails);
+  renderSuggestions(movieSuggestions.Search, suggestContainer);
   }
   catch(error) {
+    errorMain.innerHTML = displayError();
     console.log(error);
   }
 };
 
 callDetails();
 
-function createHtml(movie) { // HTML to be created upon execution of fetchPokemon()
+function renderFilmDetails(movie) { 
   const title = document.querySelector("title");
   const nav = document.querySelector(".active-nav");
+  const description = document.querySelector('meta[content]');
   detailsContainer.innerHTML = "";
 
   title.innerHTML = `Square Eyes | ${movie.Title}`;
   nav.innerHTML = `${movie.Title}`;
+  description.innerHTML = `Square Eyes | ${movie.Title}`;
 
 
-
-  detailsContainer.innerHTML = `<div class="details__wrapper top">
+  // interacting with this from details.html  ---> data-modal-target="#purchase"
+  detailsContainer.innerHTML = `<div class="details__wrapper top"> 
                                   <div class="details__card">
                                     <div class="details__image flex">
                                       <img src="${movie.Poster}" alt="${movie.Title}">
                                     </div>
                                     <div class="details__content">
                                       <h2>${movie.Title}</h2>
-                                        <p class="top bold">${movie.Plot}</p>
-                                        <div class="data">
+                                      <p class="top bold">${movie.Plot}</p>
+                                      <div class="data">
                                         <p class="top">Actors: ${movie.Actors}</p>
                                         <span> Released: ${movie.Year}  Runtime: ${movie.Runtime} </span>
-                                      </div>
-                                      <div class="purchase__container top"> 
-                                        <button>
-                                      </div>
+                                        <p> Director: <a href="creator_gregvernon.html">Greg Vernon</a>
+                                      </div> 
                                     </div>
                                   </div>
                                 </div>`
 };
 
-function forLoop(arrey, container) {
+function renderSuggestions(arrey, container) {
   container.innerHTML = "";
   
     for(let i = 0; i < arrey.length; i++) {
@@ -97,3 +94,7 @@ function forLoop(arrey, container) {
                               </div>`
     }
   };
+
+  function displayError(message = "An error has occured. Please try again.") {
+    return `<div class="error">${message}<button onClick="window.location.reload();">Reload</button></div>`;
+  }

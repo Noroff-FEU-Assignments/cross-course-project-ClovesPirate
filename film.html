@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8"/>
         <title>Square Eyes | Home</title>
-        <meta name="description" content=>
+        <meta name="description" content="Browse Independent Movies | Pay-per-view | Square Eyes">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/6b9295215b.js" crossorigin="anonymous"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com"> 
@@ -24,7 +24,7 @@
     <body>
         <header>
             <nav>
-                <a href="index.html"><img tabindex="0" src="images/square_eyes_logo.png" alt="logo" class="logo"></a>
+                <a href="index.html"><img src="images/square_eyes_logo.png" alt="logo" class="logo"></a>
                 <div class="nav__items">
                     <a href="index.html">Browse</a>
                     <a href="community.html">Community</a> 
@@ -33,52 +33,39 @@
             </nav>
         </header>
         <main>
-            <div id="overlay"></div>
-            <div class="modal" id="purchase"> <!-- This has an id of #purchase, interacting with the html button created through details.js -->
-                <div class="modal-header">
-                    <div class="title bold">Credit card information</div>
-                    <button data-close-button class="close-button">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <form action="film.html" method="get" onsubmit="validateFilm()">
-                        <label for="name_card">Full Name</label>
-                        <input type="text" name="name_card" id="name_card" required>
-                        <div class="errorMessage">As it appears on credit card</div>
-                        <label class="margin-top-small" for="cc_num">Creditcard number </label>
-                        <input type="text" name="cc_num" id="cc_num" required length="15">
-                        <div class="errorMessage">e.g 1111-2222-3333-4444</div>
-                        <label for="expire">Expiration date</label>
-                        <input type="text" name="expire" id="expire" required length="7">
-                        <div class="errorMessage">mm/yyyy</div>
-                        <label for="CVV">CVV</label>
-                        <input type="CVV" name="CVV" id="CVV" required length="3">
-                        <div class="errorMessage">3 digits</div>
-                        <button type="submit" class="form__button">Confirm</button>
-                    </form>
-                </div>
+          <div class="title top"><h2>Thank you for your purchase!</h2></div>
+          <div class="film__wrapper">
+            <div class="film-container">
+              <img class="play-button" src="images/square_eyes_play.png" alt="play-button">
             </div>
+          </div>
+          <h2 class="top">Similar movies:</h2>
+          <section class="bottom-section flex">
+            <div class="lds-facebook"><div></div><div></div><div></div></div>
+          </section>
+            <div id="overlay"></div>
             <div class="modal" id="register">
                 <div class="modal-header">
                     <div class="title bold">Register</div>
                     <button data-close-button class="close-button">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <form  method="get" onsubmit="onSubmit()">
+                    <form action="#" method="get" onsubmit="validateForm(event)">
                         <label for="user">Are you a:</label>
                         <select name="user" id="user">
                             <option value="Filmmaker">Film-maker</option>
                             <option value="Filmenthusiast">Film-enthusiast</option>
                         </select>
-                        <label class="margin-top-small" for="name-reg">Username</label>
-                        <input type="text" name="name-reg" id="name-reg" required minlength="5">
+                        <label class="margin-top-small" for="name_reg">Username</label>
+                        <input type="text" name="name" id="name_reg" required minlength="5">
                         <div class="errorMessage">Minimum 5 letters required</div>
                         <label for="email-reg">Email</label>
-                        <input type="email" name="email-reg" id="email-reg" required>
+                        <input type="email" name="email_reg" id="email_reg" required>
                         <div class="errorMessage">Please provide a valid email</div>
                         <label for="pass-reg">Password</label>
-                        <input type="password" name="pass-reg" id="pass-reg" required minlength="7">
+                        <input type="password" name="pass_reg" id="pass_reg" required minlength="7">
                         <div class="errorMessage">Minimum 7 letters required</div>
-                        <button type="submit" class="form__button">Register</button>
+                        <button data-modal-target="validated" type="submit" class="form__button">Register</button>
                     </form>
                 </div>
             </div>
@@ -88,35 +75,19 @@
                     <button data-close-button class="close-button">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <form action="#" method="post">
+                    <form action="#" method="get" onsubmit="validateForm(event)">
                         <label class="margin-top-small" for="name">Username</label>
                         <input type="text" name="name" id="name" required minlength="5">
                         <div class="errorMessage">Required</div>
                         <label for="pass">Password</label>
                         <input type="password" name="pass" id="pass" required minlength="7">
                         <div class="errorMessage">Required</div>
-                        <button class type="submit">Log In</button>
-                        <div class="flex">
+                        <button data-modal-target="validated" class type="submit">Log In</button>
+                        <div>
                             <p>Don't have an account?</p><button id="login-register" data-modal-target="#register" class="form__button">Register</button>
                         </div>
                     </form>
                 </div>
-            </div>
-                <div class="breadcrumb__nav">
-                    <a href="index.html"> <i class="fa fa-home" aria-hidden="true"></i>
-                      browse</a> | <a class="active-nav" href="community.html"></a>
-                  </div>
-
-            <section class="top-section flex">
-
-                <div class="lds-facebook flex"><div></div><div></div><div></div></div>
-            </section>
-            <div class="button__container">
-                <button class="purchase__button" data-modal-target="#purchase"> $4.99 </button> 
-             </div>
-            <h2 class="margin-top-small">Suggested:</h2>
-            <div class="bottom-section flex">
-                <div class="lds-facebook"><div></div><div></div><div></div></div>
             </div>
         </main>
         <footer class="top">
@@ -130,7 +101,7 @@
             <a href="#"><img src="images/square_eyes_logo_extended.png" alt="logo"></a>
             </div>
         </footer>
+        <script type="module" src="js/community.js"></script>
         <script src="js/forms.js"></script>
-        <script type="module" src="js/details.js"></script>
     </body>
 </html>

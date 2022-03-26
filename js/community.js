@@ -1,4 +1,9 @@
+import { displayError } from "./utils/components.js";
+import { renderSuggestions } from "./utils/components.js";
+import { simpleFetch } from "./utils/components.js";
+
 const suggestContainer = document.querySelector(".bottom-section");
+const errorMain = document.querySelector("main");
 
 const searchArray =["earth", "journey", "alien", "fly", "sad", "death", "dragon", "cat", "storm", "family", "avenger"];
 const randomElement = [Math.floor(Math.random() * searchArray.length)];
@@ -17,42 +22,14 @@ async function callDetails() {
   console.log(movieSuggestions);
 
 
-  forLoop(movieSuggestions.Search, suggestContainer);
+  renderSuggestions(movieSuggestions.Search, suggestContainer);
   }
   catch(error) {
+    errorMain.innerHTML = displayError();
     console.log(error);
   }
 };
 
 callDetails()
 
-function forLoop(arrey, container) {
-  container.innerHTML = "";
   
-    for(let i = 0; i < arrey.length; i++) {
-  
-      if (i === 6) {
-        break;
-      }
-  
-      container.innerHTML += `
-                              <div class="card">
-                                <div class="play__container">
-                                  <div class="play__info">
-                                    <img src="/images/square_eyes_play.png" alt="play-button">
-                                  </div>
-                                </div>
-                                <a href="details.html?id=${arrey[i].imdbID}">
-                                  <img src="${arrey[i].Poster}" alt="${arrey[i].Title}">
-                                </a>
-                              </div>`
-    }
-  };
-
-  async function simpleFetch(url, headers) {
-    const response = await fetch(url, headers);
-    if (response.ok) {
-      return await response.json();
-    }
-    throw new Error(`${response.status} ${response.statusText}`);
-  }
