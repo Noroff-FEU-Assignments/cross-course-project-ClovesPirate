@@ -23,125 +23,109 @@
     </head>
     <body>
         <header>
-            <a href="index.html"><img src="images/square_eyes_logo.png" alt="logo" class="logo"></a>
-            <a class="profile" href="login.html">Log In<i class="fas fa-user"></i></a>
-            <nav class="tags__nav">
-                <a href="explore_new.html">New</a>
-                <a href="explore_popular.html">Popular</a>
-                <a href="explore_romance.html">Romance</a>
-                <a href="explore_thriller.html">Thriller</a>
+            <nav class="flex">
+                <a href="index.html"><img src="images/square_eyes_logo.png" alt="logo" class="logo"></a>
+                <div class="nav__items flex">
+                    <a href="index.html">Browse</a>
+                    <a href="community.html">Community</a> 
+                    <button id="button-login" class="buttons" data-modal-target="#login">Log In<i class="fas fa-user"></i></button>
+                </div>
             </nav>
         </header>
         <main>
-            <section class="promo">
-                <div class="promotion__content">
-                <img src="images/square_eyes_logo_extended.png" alt="logo">
-                <p>Square Eyes&copy; is a new movie-platform for film-enthusiasts. Our aim is to make independent films more accessible for the viewer and easier to distribute for the creator.</p>
-                <p>Sign up to get instant access to discount subscription-based payment models!</p>
-                <a class="cta_promo" href="register.html">Sign Up!</a>
+            <div id="overlay"></div>
+            <div class="modal" id="register">
+                <div class="modal-header flex">
+                    <div class="title bold">Register</div>
+                    <button data-close-button class="close-button">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" onsubmit="onSubmit()">
+                        <label for="user">Are you a:</label>
+                        <select name="user" id="user">
+                            <option value="Filmmaker">Film-maker</option>
+                            <option value="Filmenthusiast">Film-enthusiast</option>
+                        </select>
+                        <label class="margin-top-small" for="name">Username</label>
+                        <input type="text" name="name" id="name" required minlength="5">
+                        <div class="errorMessage">Minimum 5 letters required</div>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" required>
+                        <div class="errorMessage">Please provide a valid email</div>
+                        <label for="pass">Password</label>
+                        <input type="password" name="pass" id="pass" required minlength="7">
+                        <div class="errorMessage">Minimum 7 letters required</div>
+                        <button class type="submit" class="form__button">Register</button>
+                    </form>
+                </div>
+            </div>
+            </div>
+            <div class="modal" id="login">
+                <div class="modal-header flex">
+                    <div class="title bold">Log In</div>
+                    <button data-close-button class="close-button">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form action="#" method="post">
+                        <label class="margin-top-small" for="name">Username</label>
+                        <input type="text" name="name" id="name" required minlength="5">
+                        <div class="errorMessage">Required</div>
+                        <label for="pass">Password</label>
+                        <input type="password" name="pass" id="pass" required minlength="7">
+                        <div class="errorMessage">Required</div>
+                        <button class type="submit">Log In</button>
+                        <div class="flex">
+                            <p>Don't have an account?</p><button id="login-register" data-modal-target="#register" class="form__button">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <section class="signup__wrapper top">
+                <div class="signup__container">
+                    <img class="promo__logo" src="images/square_eyes_logo_extended.png" alt="logo">
+                    <p>You don't have to sign up to enjoy our films, but we sure would appreciate it, and think you would too!</p>
+                    <p class="margin-top-small">By signing up you'll get:</p>
+                        <ul>
+                            <li>Early releases</li>
+                            <li>Exclusive interviews</li>
+                            <li>Discount deals</li>
+                        </ul>
+                    <p class="bold margin-top-small">For a limited time only, your first purchase is on us!</p>
+                    <button id="button-register" data-modal-target="#register" class="top buttons">Sign Up</button>
                 </div>
             </section>
-            <h2 class="featured__title">Featured Filmmaker</h2>
-            <section>
-                <div class="featured">
-                    <div class="card">
-                        <div class="thumbnail">
-                        <a href="/creatorprofile.html">
-                            <img src="images/profile_featured.jpg" alt="Greg Vernon">
-                        </a>
-                        </div>
-                        <div class="content">
-                            <div class="title">
-                            <a href="/creatorprofile.html"><h3>Greg Vernon</h3></a>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa esse modi illum, itaque tempora optio sapiente at similique alias dolor iusto quia natus ratione, laudantium numquam, deserunt eius. Quis, eveniet.</p>
-                            </div>
-                        </div>
-                    </div>
+            <section class="top">
+                <h2>Handpicked for you</h2>
+                <div class="favorite__container flex">
                 </div>
             </section>
-            <h2>New releases</h2>
-            <section>
-                <div class="card">
-                    <div class="thumbnail">
-                        <a href="/moviepage.html">
-                            <img src="images/thumbnail_love.jpg" alt="Ana's Dilemma">
-                        </a>
-                    </div>
-                    <div class="content">
-                        <div class="title">
-                        <a href="/moviepage.html"><h3>Ana's Dilemma</h3></a><p>By <a href="/creatorprofile.html">Greg Vernon</a></p>
-                        </div>
-                        <span class="tags"><a href="/explore_romance.html">Romance</a><a href="/explore_thriller.html">Thriller</a></span>
-                    </div>
+            <h2 class="top">Newly Added Films</h2>
+            <section class="container__drama flex">
+
+            </section>
+            <h2>Squared Eyed n' Chill</h2>
+            <section class="container__scifi flex">
+
+            </section>
+            <section class="top">
+                <h2>Top picks</h2>
+                <div class="promo__container flex">
                 </div>
-                <div class="card">
-                    <div class="thumbnail">
-                        <a href="/moviepage.html">
-                            <img src="images/thumbnail_love.jpg" alt="Ana's Dilemma">
-                        </a>
-                    </div>
-                    <div class="content">
-                        <div class="title">
-                        <a href="/moviepage.html"><h3>Ana's Dilemma</h3></a><p>By <a href="/creatorprofile.html">Greg Vernon</a></p>
-                        </div>
-                        <span class="tags"><a href="/explore_romance.html">Romance</a><a href="/explore_thriller.html">Thriller</a></span>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="thumbnail">
-                        <a href="/moviepage.html">
-                            <img src="images/thumbnail_love.jpg" alt="Ana's Dilemma">
-                        </a>
-                    </div>
-                    <div class="content">
-                        <div class="title">
-                        <a href="/moviepage.html"><h3>Ana's Dilemma</h3></a><p>By <a href="/creatorprofile.html">Greg Vernon</a></p>
-                        </div>
-                        <span class="tags"><a href="/explore_romance.html">Romance</a><a href="/explore_thriller.html">Thriller</a></span>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="thumbnail">
-                        <a href="/moviepage.html">
-                            <img src="images/thumbnail_love.jpg" alt="Ana's Dilemma">
-                        </a>
-                    </div>
-                    <div class="content">
-                        <div class="title">
-                        <a href="/moviepage.html"><h3>Ana's Dilemma</h3></a><p>By <a href="/creatorprofile.html">Greg Vernon</a></p>
-                        </div>
-                        <span class="tags"><a href="/explore_romance.html">Romance</a><a href="/explore_thriller.html">Thriller</a></span>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="thumbnail">
-                        <a href="/moviepage.html">
-                            <img src="images/thumbnail_love.jpg" alt="Ana's Dilemma">
-                        </a>
-                    </div>
-                    <div class="content">
-                        <div class="title">
-                        <a href="/moviepage.html"><h3>Ana's Dilemma</h3></a><p>By <a href="/creatorprofile.html">Greg Vernon</a></p>
-                        </div>
-                        <span class="tags"><a href="/explore_romance.html">Romance</a><a href="/explore_thriller.html">Thriller</a></span>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="thumbnail">
-                        <a href="/moviepage.html">
-                            <img src="images/thumbnail_love.jpg" alt="Ana's Dilemma">
-                        </a>
-                    </div>
-                    <div class="content">
-                        <div class="title">
-                        <a href="/moviepage.html"><h3>Ana's Dilemma</h3></a><p>By <a href="/creatorprofile.html">Greg Vernon</a></p>
-                        </div>
-                        <span class="tags"><a href="/explore_romance.html">Romance</a><a href="/explore_thriller.html">Thriller</a></span>
-                    </div>
-                </div>
+            </section>
+            <h2 class="top">Critically Acclaimed</h2>
+            <section class="container__action flex">
+
+            </section>
+            <h2>High Intensity</h2>
+            <section class="container__thriller flex">
+
+            </section>
+            <h2>Tearjerkers</h2>
+            <section class="container__fantasy flex">
+
             </section>
         </main>
-        <footer>
+        <footer class="top">
             <div class="footer_contact">
                 <a href="#"><i class="fas fa-envelope"></i></a>
                 <a href="#"><i class="fab fa-twitter-square"></i></a>
@@ -149,8 +133,10 @@
                 <a href="#"><i class="fab fa-instagram-square"></i></a>
             </div>
             <div class="logo__container">
-            <a href="index.html"><img src="images/square_eyes_logo_extended.png" alt="logo"></a>
+            <a href="#"><img src="images/square_eyes_logo_extended.png" alt="logo"></a>
             </div>
         </footer>
+        <script type="module" src="js/main.js"></script>
+        <script src="js/forms.js"></script>
     </body>
 </html>

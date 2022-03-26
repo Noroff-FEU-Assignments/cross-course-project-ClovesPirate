@@ -33,13 +33,15 @@
             </nav>
         </header>
         <main>
-        <form action="index.html" method="post">
+        <form action="index.html">
             <div class="form__container">
                 <h1>Log In</h1>
-            <label for="email">Email</label>
-            <input type="text" placeholder="Your Email" name="email" id="email" required>
-            <label for="password">Password</label>
-            <input type="password" placeholder="Enter Password" name="password" id="password" required>
+                <label for="user">Username</label>
+                <input type="text" placeholder="Your username" name="username" id="username" required minlength="5"> 
+                <div class="errorMessage">Minumum 5 letters</div>
+                <label for="password">Password </label>
+                <input type="password" placeholder="Your password" name="password" id="password" required minlength="7">
+                <div class="errorMessage">Must contain a minimum of 7 letters</div>
             <button type="submit" class="form_cta">Log In</button>
             <p>Don't have an account?<a class="form_cta" href="register.html"> Register</a></p>
             </div>

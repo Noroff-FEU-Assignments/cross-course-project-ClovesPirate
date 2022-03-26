@@ -33,18 +33,20 @@
             </nav>
         </header>
         <main>
-        <form action="index.html" method="post">
+        <form action="index.html">
             <div class="form__container">
                 <h1>Ana's Dilemma</h1>
                 <p>Your credit card information</p>
             <label for="card-name">Name on Card</label>
             <input type="text" placeholder="Ola Nordmann" name="card-name" id="card-name" required>
+            <div class="errorMessage">Please enter your name</div>
             <label for="cc-number">Credit Card Number</label>
-            <input type="text" placeholder="1111-2222-3333-4444" name="cc-number" id="cc-number" required>
+            <input type="text" placeholder="1111-2222-3333-4444" name="cc-number" id="cc-number" required minlength="16">
+            <div class="errorMessage">Use this format: 1111-2222-3333-4444</div>
             <label for="exp-date">Expiration date</label>
-            <input type="text" placeholder="august" name="exp-date" id="exp-date" required>
+            <input type="date" placeholder="august" name="exp-date" id="exp-date" required>
             <label for="cvv">CVV</label>
-            <input type="text" placeholder="332" name="cvv" id="cvv" required>
+            <input type="text" placeholder="332" name="cvv" id="cvv" required minlength="3">
             <p>Paymement total: $ 8.99</p>
             <button type="submit" class="form_cta">Purchase</button>
         </form>

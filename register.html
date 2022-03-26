@@ -33,7 +33,7 @@
             </nav>
         </header>
         <main>
-          <form action="index.html" method="post">
+          <form onsubmit="return validate(event)">
             <div class="form__container">
               <h1>Register</h1>
               <label for="user">Are you a:</label>
@@ -42,13 +42,14 @@
                 <option value="Filmenthusiast">Film-enthusiast</option>
               </select>
               <label for="username">Username</label>
-              <input type="text" placeholder="Your username" name="username" id="username" required>
+              <input type="text" name="username" id="username" required minlength="5">
+              <div class="errorMessage">Minimum 5 letters required</div>
               <label for="email">Email</label>
-              <input type="text" placeholder="Your Email" name="email" id="email" required>
+              <input type="email" name="email" id="email" required>
+              <div class="errorMessage">Please provide a valid e-mail address</div>
               <label for="password">Password</label>
-              <input type="password" placeholder="Enter password" name="password" id="password" required>
-              <label for="password__repeat">Repeat Password</label>
-              <input type="password" placeholder="Repeat Password" name="password_repeat" id="password__repeat" required>
+              <input type="password" name="password" id="password" required minlength="7">
+              <div class="errorMessage">Minimum 7 letters required</div>
               <p class="tos">By creating an account you agree to our <a href="#">Terms of Service</a></p>
               <button type="submit" class="form_cta">Register</button>
               <p>Already have an account? <a href="login.html">Sign in</a></p>
@@ -66,5 +67,6 @@
           <a href="index.html"><img src="images/square_eyes_logo_extended.png" alt="logo"></a>
           </div>
       </footer>
+      <script src="js/forms.js"></script>
     </body>
 </html>
