@@ -19,6 +19,7 @@ body {
   font-family: "Nunito", Verdana, Geneva, Tahoma, sans-serif;
   max-width: 1400px;
   margin: auto;
+  background-color: var(--light-color);
 }
 
 main {
@@ -37,32 +38,9 @@ h3 {
   color: var(--dark-color);
 }
 
-a {
-  text-decoration: none;
-}
-
-.flex {
-  display: flex;
-}
-
-.bold {
-  font-weight: 700;
-}
-
-.top {
-  margin-top: 3em;
-}
-
-.margin-top-small {
-  margin-top: 1.5em;
-}
-
-.margin-bottom-small {
-  margin-bottom: 1.5em;
-}
-
-.margin-right {
-  margin-right: 1em;
+div {
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* header */
@@ -99,6 +77,10 @@ nav {
   margin-left: 10px;
 }
 
+.buttons i {
+  margin-left: 10px;
+}
+
 /* footer */
 
 .footer_contact {
@@ -130,14 +112,16 @@ footer img {
 
 .signup__wrapper {
   margin: 10px;
-  margin-top: 6em;
+  margin-top: 2em;
+  width: 100%;
+  height: 100%;
 }
 
 .promo__logo {
   position: relative;
-  top: 50%;
+  top: 0%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0%);
   width: 150px;
 }
 
@@ -152,10 +136,12 @@ footer img {
 
 #button-register {
   font-size: 30px;
-}
-
-.buttons i {
-  margin-left: 10px;
+  position: relative;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  max-width: 300px;
+  justify-content: center;
 }
 
 .signup__container {
@@ -164,6 +150,7 @@ footer img {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  background-color: var(--light-color);
 }
 
 .promo__container,
@@ -186,11 +173,6 @@ footer img {
 }
 
 /* Movies */
-
-section {
-  flex-wrap: wrap;
-  justify-content: center;
-}
 
 .card img {
   height: 250px;
@@ -218,6 +200,10 @@ section {
 }
 
 /* details */
+
+.top-section {
+  flex-wrap: nowrap;
+}
 
 .details__wrapper {
   margin: 1em;
@@ -354,6 +340,7 @@ select {
   margin: 3em 1em 1em 1em;
   padding: 1.5em;
   background-color: var(--accent-color);
+  border-radius: 5px;
 }
 
 .creator-image img {

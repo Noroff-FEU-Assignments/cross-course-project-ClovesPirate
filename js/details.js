@@ -86,12 +86,12 @@ function forLoop(arrey, container) {
   
       container.innerHTML += `
                               <div class="card">
+                                <a href="details.html?id=${arrey[i].imdbID}">
                                 <div class="play__container">
                                   <div class="play__info">
                                     <img src="/images/square_eyes_play.png" alt="play-button">
                                   </div>
                                 </div>
-                                <a href="details.html?id=${arrey[i].imdbID}">
                                   <img src="${arrey[i].Poster}" alt="${arrey[i].Title}">
                                 </a>
                               </div>`
