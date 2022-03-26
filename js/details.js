@@ -16,9 +16,7 @@ const options = { "headers": {
 
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
-console.log(params);
 const id = params.get("id");
-console.log(id);
 
 const url = 'https://imdb-data-searching.p.rapidapi.com/om?i=' + id;
 const suggestionURL = 'https://imdb-data-searching.p.rapidapi.com/om?s=' + searchParams;
@@ -30,6 +28,7 @@ async function callDetails() {
   const movieSuggestions = await simpleFetch(suggestionURL, options);
   console.log(movieSuggestions);
 
+  console.log(movieDetails);
   purchaseButton.style.display = "flex";
   renderFilmDetails(movieDetails);
   renderSuggestions(movieSuggestions.Search, suggestContainer);
@@ -64,6 +63,7 @@ function renderFilmDetails(movie) {
                                       <p class="top bold">${movie.Plot}</p>
                                       <div class="data">
                                         <p class="top">Actors: ${movie.Actors}</p>
+                                        <p> Genre: ${movie.Genre}</p>
                                         <span> Released: ${movie.Year}  Runtime: ${movie.Runtime} </span>
                                         <p> Director: <a href="creator_gregvernon.html">Greg Vernon</a>
                                       </div> 

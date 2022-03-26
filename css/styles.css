@@ -536,6 +536,10 @@ li {
     margin-left: 5px;
   }
 
+  .purchase__button {
+    display: block;
+  }
+
   h2 {
     margin-top: 10px;
     margin-left: 10px;

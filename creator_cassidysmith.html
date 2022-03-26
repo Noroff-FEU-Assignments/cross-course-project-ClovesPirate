@@ -33,82 +33,77 @@
             </nav>
         </header>
         <main>
-          <div id="overlay"></div>
-            <div class="modal" id="register">
-                <div class="modal-header flex">
-                    <div class="title bold">Register</div>
-                    <button data-close-button class="close-button">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <form  method="get" onsubmit="onSubmit()">
-                        <label for="user">Are you a:</label>
-                        <select name="user" id="user">
-                            <option value="Filmmaker">Film-maker</option>
-                            <option value="Filmenthusiast">Film-enthusiast</option>
-                        </select>
-                        <label class="margin-top-small" for="name-reg">Username</label>
-                        <input type="text" name="name-reg" id="name-reg" required minlength="5">
-                        <div class="errorMessage">Minimum 5 letters required</div>
-                        <label for="email-reg">Email</label>
-                        <input type="email" name="email-reg" id="email-reg" required>
-                        <div class="errorMessage">Please provide a valid email</div>
-                        <label for="pass-reg">Password</label>
-                        <input type="password" name="pass-reg" id="pass-reg" required minlength="7">
-                        <div class="errorMessage">Minimum 7 letters required</div>
-                        <button type="submit" class="form__button">Register</button>
-                    </form>
-                </div>
-            </div>
-            <div class="modal" id="login">
-                <div class="modal-header flex">
-                    <div class="title bold">Log In</div>
-                    <button data-close-button class="close-button">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <form action="#" method="post">
-                        <label class="margin-top-small" for="name">Username</label>
-                        <input type="text" name="name" id="name" required minlength="5">
-                        <div class="errorMessage">Required</div>
-                        <label for="pass">Password</label>
-                        <input type="password" name="pass" id="pass" required minlength="7">
-                        <div class="errorMessage">Required</div>
-                        <button class type="submit">Log In</button>
-                        <div class="flex">
-                            <p>Don't have an account?</p><button id="login-register" data-modal-target="#register" class="form__button">Register</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div>
-                <div class="breadcrumb__nav">
-                  <a href="index.html"> <i class="fa fa-home" aria-hidden="true"></i>
-                    browse</a> | <a href="community.html">Community</a> | <a class="active-nav" href="creator_cassidysmith.html">Cassidy Smith</a>
-                </div>
-            </div>
-            <section class="top-section">
-              <div class="details__wrapper top">
-                <div class="details__card">
-                  <div class="details__image flex">
-                    <img src="images/cassidy_smith.jpg" alt="${movie.Title}">
-                  </div>
-                  <div class="details__content">
-                    <h2>Cassidy Smith</h2>
-                      <p class="top bold">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia sed dolores enim obcaecati placeat consequatur tenetur, itaque molestias odit eum.</p>
-                      <p class="margin-top-small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quisquam suscipit explicabo reprehenderit fugit quibusdam voluptatibus a quam qui illum inventore reiciendis vitae, magni earum eum. Obcaecati earum quasi magni totam eos asperiores commodi ducimus ex pariatur, molestias odit quam fugiat quas ratione, nisi nam maxime, iure sequi illum fugit.</p>
-                      <div class="data">
+          <div class="breadcrumb__nav">
+            <a href="index.html"> <i class="fa fa-home" aria-hidden="true"></i>
+              browse</a> | <a href="community.html">Community</a> | <a class="active-nav" href="creator_cassidysmith.html">Cassidy Smith</a>
+          </div>
 
-                     
-                    </div>
-                    
-                  </div>
+          <section class="top-section">
+            <div class="details__wrapper top">
+              <div class="details__card">
+                <div class="details__image flex">
+                  <img src="images/cassidy_smith.jpg" alt="${movie.Title}">
+                </div>
+                <div class="details__content">
+                  <h2>Cassidy Smith</h2>
+                    <p class="top bold">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia sed dolores enim obcaecati placeat consequatur tenetur, itaque molestias odit eum.</p>
+                    <p class="margin-top-small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quisquam suscipit explicabo reprehenderit fugit quibusdam voluptatibus a quam qui illum inventore reiciendis vitae, magni earum eum. Obcaecati earum quasi magni totam eos asperiores commodi ducimus ex pariatur, molestias odit quam fugiat quas ratione, nisi nam maxime, iure sequi illum fugit.</p>
                 </div>
               </div>
-            </section>
-            <h2 class="margin-top-small">Films by Cassidy Smith:</h2>
-            <section class="bottom-section flex">
-              <div class="lds-facebook"><div></div><div></div><div></div></div>
-            </section>
-            <script src="js/community.js" type="module"></script>
+            </div>
+          </section>
+
+          <h2 class="margin-top-small">Films by Cassidy Smith:</h2>
+          <section class="bottom-section flex">
+            <div class="lds-facebook"><div></div><div></div><div></div></div>
+          </section>
+          
+          <div id="overlay"></div>
+          <div class="modal" id="register">
+              <div class="modal-header">
+                  <div class="title bold">Register</div>
+                  <button data-close-button class="close-button">&times;</button>
+              </div>
+              <div class="modal-body">
+                  <form action="#" method="get" onsubmit="validateForm(event)">
+                      <label for="user">Are you a:</label>
+                      <select name="user" id="user">
+                          <option value="Filmmaker">Film-maker</option>
+                          <option value="Filmenthusiast">Film-enthusiast</option>
+                      </select>
+                      <label class="margin-top-small" for="name_reg">Username</label>
+                      <input type="text" name="name" id="name_reg" required minlength="5">
+                      <div class="errorMessage">Minimum 5 letters required</div>
+                      <label for="email-reg">Email</label>
+                      <input type="email" name="email_reg" id="email_reg" required>
+                      <div class="errorMessage">Please provide a valid email</div>
+                      <label for="pass-reg">Password</label>
+                      <input type="password" name="pass_reg" id="pass_reg" required minlength="7">
+                      <div class="errorMessage">Minimum 7 letters required</div>
+                      <button data-modal-target="validated" type="submit" class="form__button">Register</button>
+                  </form>
+              </div>
+          </div>
+          <div class="modal" id="login">
+              <div class="modal-header">
+                  <div class="title bold">Log In</div>
+                  <button data-close-button class="close-button">&times;</button>
+              </div>
+              <div class="modal-body">
+                  <form action="#" method="get" onsubmit="validateForm(event)">
+                      <label class="margin-top-small" for="name">Username</label>
+                      <input type="text" name="name" id="name" required minlength="5">
+                      <div class="errorMessage">Required</div>
+                      <label for="pass">Password</label>
+                      <input type="password" name="pass" id="pass" required minlength="7">
+                      <div class="errorMessage">Required</div>
+                      <button data-modal-target="validated" class type="submit">Log In</button>
+                      <div>
+                          <p>Don't have an account?</p><button id="login-register" data-modal-target="#register" class="form__button">Register</button>
+                      </div>
+                  </form>
+              </div>
+          </div>
         </main>
         <footer class="top">
           <div class="footer_contact">
@@ -121,5 +116,6 @@
           <a href="#"><img src="images/square_eyes_logo_extended.png" alt="logo"></a>
           </div>
       </footer>
+      <script src="js/community.js" type="module"></script>
     </body>
 </html>
