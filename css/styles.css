@@ -497,6 +497,11 @@ li {
     margin-left: 10px;
   }
 
+  .card,
+  .promo__card {
+    transform: scale(1);
+  }
+
   .bottom-section,
   h2,
   .favorite__container,
