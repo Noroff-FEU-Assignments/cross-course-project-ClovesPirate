@@ -1,3 +1,5 @@
+@import "animations.css";
+
 :root {
   --style-color: #475765;
   --dark-color: #373736;
@@ -28,7 +30,7 @@ h2 {
   display: flex;
   justify-content: center;
   position: relative;
-  top: 19px;
+  top: 14px;
 }
 
 h3 {
@@ -128,7 +130,7 @@ footer img {
 
 .signup__wrapper {
   margin: 10px;
-  margin-top: 4em;
+  margin-top: 6em;
 }
 
 .promo__logo {
@@ -228,6 +230,10 @@ section {
 
 .details__content {
   margin: 2em;
+}
+
+.details__image img {
+  border-radius: 5px;
 }
 
 .poster {
@@ -352,7 +358,7 @@ select {
 }
 
 .creator-image img {
-  max-width: 100%;
+  max-width: 98%;
 }
 
 /* Modal */
@@ -456,17 +462,19 @@ a {
   margin-right: 1em;
 }
 
-@media (max-width: 730px) {
+li {
+  list-style: none;
+}
+@media (max-width: 960px) {
   .details__card {
     flex-direction: column;
   }
-
   .details__image {
     justify-content: center;
   }
 
   .details__image img {
-    max-width: 285px;
+    max-width: 100%;
   }
 }
 
@@ -477,12 +485,16 @@ a {
     overflow-x: scroll;
   }
 
+  #button-login {
+    margin-right: 0;
+  }
+
   .buttons i {
-    margin-left: 0;
+    margin-left: 5px;
   }
 
   h2 {
-    margin-left: 5px;
+    margin-left: 10px;
   }
 
   .bottom-section,

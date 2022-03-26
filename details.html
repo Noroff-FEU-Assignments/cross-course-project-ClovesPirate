@@ -9,7 +9,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com"> 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-        <link href="styles.css" rel="stylesheet">
+        <link href="css/styles.css" rel="stylesheet">
          <script>
         (function(h,o,t,j,a,r){
             h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
@@ -33,18 +33,65 @@
             </nav>
         </header>
         <main>
+            <div id="overlay"></div>
+            <div class="modal" id="register">
+                <div class="modal-header flex">
+                    <div class="title bold">Register</div>
+                    <button data-close-button class="close-button">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form  method="get" onsubmit="onSubmit()">
+                        <label for="user">Are you a:</label>
+                        <select name="user" id="user">
+                            <option value="Filmmaker">Film-maker</option>
+                            <option value="Filmenthusiast">Film-enthusiast</option>
+                        </select>
+                        <label class="margin-top-small" for="name">Username</label>
+                        <input type="text" name="name" required minlength="5">
+                        <div class="errorMessage">Minimum 5 letters required</div>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" required>
+                        <div class="errorMessage">Please provide a valid email</div>
+                        <label for="pass">Password</label>
+                        <input type="password" name="pass" required minlength="7">
+                        <div class="errorMessage">Minimum 7 letters required</div>
+                        <button class type="submit" class="form__button">Register</button>
+                    </form>
+                </div>
+            </div>
+            </div>
+            <div class="modal" id="login">
+                <div class="modal-header flex">
+                    <div class="title bold">Log In</div>
+                    <button data-close-button class="close-button">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form action="#" method="post">
+                        <label class="margin-top-small" for="name">Username</label>
+                        <input type="text" name="name" id="name" required minlength="5">
+                        <div class="errorMessage">Required</div>
+                        <label for="pass">Password</label>
+                        <input type="password" name="pass" id="pass" required minlength="7">
+                        <div class="errorMessage">Required</div>
+                        <button class type="submit">Log In</button>
+                        <div class="flex">
+                            <p>Don't have an account?</p><button id="login-register" data-modal-target="#register" class="form__button">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
                 <div class="breadcrumb__nav">
                     <a href="index.html"> <i class="fa fa-home" aria-hidden="true"></i>
                       browse</a> | <a class="active-nav" href="community.html"></a>
                   </div>
 
             <section class="top-section">
-
+                <div class="lds-facebook flex"><div></div><div></div><div></div></div>
             </section>
             
             <h2 class="margin-top-small">Suggested:</h2>
             <section class="bottom-section flex">
-
+                <div class="lds-facebook"><div></div><div></div><div></div></div>
             </section>
         </main>
         <footer class="top">

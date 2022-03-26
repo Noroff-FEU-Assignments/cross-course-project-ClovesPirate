@@ -1,4 +1,6 @@
 export function forLoop(arrey, container) {
+container.innerHTML = "";
+
   for(let i = 0; i < arrey.length; i++) {
 
     if (i === 6) {
@@ -20,6 +22,8 @@ export function forLoop(arrey, container) {
 };
 
 export function promoLoop(arrey, container) {
+  container.innerHTML = "";
+
   for(let i = 0; i < arrey.length; i++) {
 
     if (i === 3) {
@@ -47,3 +51,4 @@ export async function simpleFetch(url, headers) {
   }
   throw new Error(`${response.status} ${response.statusText}`);
 }
+

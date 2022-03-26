@@ -9,7 +9,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com"> 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-        <link href="styles.css" rel="stylesheet">
+        <link href="css/styles.css" rel="stylesheet">
          <script>
         (function(h,o,t,j,a,r){
             h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
@@ -40,20 +40,20 @@
                     <button data-close-button class="close-button">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <form method="post" onsubmit="onSubmit()">
+                    <form  method="get" onsubmit="onSubmit()">
                         <label for="user">Are you a:</label>
                         <select name="user" id="user">
                             <option value="Filmmaker">Film-maker</option>
                             <option value="Filmenthusiast">Film-enthusiast</option>
                         </select>
                         <label class="margin-top-small" for="name">Username</label>
-                        <input type="text" name="name" id="name" required minlength="5">
+                        <input type="text" name="name" required minlength="5">
                         <div class="errorMessage">Minimum 5 letters required</div>
                         <label for="email">Email</label>
-                        <input type="email" name="email" id="email" required>
+                        <input type="email" name="email" required>
                         <div class="errorMessage">Please provide a valid email</div>
                         <label for="pass">Password</label>
-                        <input type="password" name="pass" id="pass" required minlength="7">
+                        <input type="password" name="pass" required minlength="7">
                         <div class="errorMessage">Minimum 7 letters required</div>
                         <button class type="submit" class="form__button">Register</button>
                     </form>
@@ -68,10 +68,10 @@
                 <div class="modal-body">
                     <form action="#" method="post">
                         <label class="margin-top-small" for="name">Username</label>
-                        <input type="text" name="name" id="name" required minlength="5">
+                        <input type="text" name="name" required minlength="5">
                         <div class="errorMessage">Required</div>
                         <label for="pass">Password</label>
-                        <input type="password" name="pass" id="pass" required minlength="7">
+                        <input type="password" name="pass" required minlength="7">
                         <div class="errorMessage">Required</div>
                         <button class type="submit">Log In</button>
                         <div class="flex">
@@ -80,7 +80,7 @@
                     </form>
                 </div>
             </div>
-            <section class="signup__wrapper top">
+            <section class="signup__wrapper">
                 <div class="signup__container">
                     <img class="promo__logo" src="images/square_eyes_logo_extended.png" alt="logo">
                     <p>You don't have to sign up to enjoy our films, but we sure would appreciate it, and think you would too!</p>
@@ -97,32 +97,34 @@
             <section class="top">
                 <h2>Handpicked for you</h2>
                 <div class="favorite__container flex">
+                    <div class="lds-facebook"><div></div><div></div><div></div></div>
                 </div>
             </section>
-            <h2 class="top">Newly Added Films</h2>
+            <h2 class="top">Newly Added</h2>
             <section class="container__drama flex">
-
+                <div class="lds-facebook"><div></div><div></div><div></div></div>
             </section>
-            <h2>Squared Eyed n' Chill</h2>
+            <h2>Trending now</h2>
             <section class="container__scifi flex">
-
+                <div class="lds-facebook"><div></div><div></div><div></div></div>
             </section>
             <section class="top">
                 <h2>Top picks</h2>
                 <div class="promo__container flex">
+                    <div class="lds-facebook"><div></div><div></div><div></div></div>
                 </div>
             </section>
             <h2 class="top">Critically Acclaimed</h2>
             <section class="container__action flex">
-
+                <div class="lds-facebook"><div></div><div></div><div></div></div>
             </section>
             <h2>High Intensity</h2>
             <section class="container__thriller flex">
-
+                <div class="lds-facebook"><div></div><div></div><div></div></div>
             </section>
             <h2>Tearjerkers</h2>
             <section class="container__fantasy flex">
-
+                <div class="lds-facebook"><div></div><div></div><div></div></div>
             </section>
         </main>
         <footer class="top">

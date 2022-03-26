@@ -25,7 +25,8 @@ async function simpleFetch(url, headers) {
     return await response.json();
   }
   throw new Error(`${response.status} ${response.statusText}`);
-};
+}
+
 
 async function callDetails() {
   try {
@@ -66,10 +67,8 @@ function createHtml(movie) { // HTML to be created upon execution of fetchPokemo
                                         <p class="top">Actors: ${movie.Actors}</p>
                                         <span> Released: ${movie.Year}  Runtime: ${movie.Runtime} </span>
                                       </div>
-                                      <div class="purchase__container top"> 
-                                        <div>
-                                          <a class="purchase__button" id="creditcard" href="purchase.html">$4.99</a>
-                                        </div>
+                                      <div class="purchase__container top"> 
+                                        <button>
                                       </div>
                                     </div>
                                   </div>
@@ -77,22 +76,24 @@ function createHtml(movie) { // HTML to be created upon execution of fetchPokemo
 };
 
 function forLoop(arrey, container) {
-  for(let i = 0; i < arrey.length; i++) {
-
-    if(i === 6) {
-      break;
-    }
-
-    container.innerHTML += `
-                            <div class="card">
-                              <div class="play__container">
-                                <div class="play__info">
-                                  <img src="/images/square_eyes_play.png" alt="play-button">
+  container.innerHTML = "";
+  
+    for(let i = 0; i < arrey.length; i++) {
+  
+      if (i === 6) {
+        break;
+      }
+  
+      container.innerHTML += `
+                              <div class="card">
+                                <div class="play__container">
+                                  <div class="play__info">
+                                    <img src="/images/square_eyes_play.png" alt="play-button">
+                                  </div>
                                 </div>
-                              </div>
-                              <a href="details.html?id=${arrey[i].imdbID}">
-                                <img src="${arrey[i].Poster}" alt="${arrey[i].Title}">
-                              </a>
-                            </div>`
-  }
-};
+                                <a href="details.html?id=${arrey[i].imdbID}">
+                                  <img src="${arrey[i].Poster}" alt="${arrey[i].Title}">
+                                </a>
+                              </div>`
+    }
+  };
