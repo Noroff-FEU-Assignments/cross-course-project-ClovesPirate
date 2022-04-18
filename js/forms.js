@@ -10,7 +10,6 @@ const validation = document.getElementById("validated");
 openModalButtons.forEach(button => { // This code to open modals
   button.addEventListener("click", () => {
     const modal = document.querySelector(button.dataset.modalTarget);
-    console.log("1"); // testing output
     openModal(modal);
   })
 });

@@ -9,7 +9,9 @@
 
 /* global */
 
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -534,10 +536,6 @@ li {
 
   .buttons i {
     margin-left: 5px;
-  }
-
-  .purchase__button {
-    display: block;
   }
 
   h2 {
