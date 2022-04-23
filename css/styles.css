@@ -2,11 +2,11 @@
 @import "reset.css";
 
 :root {
-  --background-color: #1e2626;
+  --background-color: #222828;
   --style-color: #f6a217;
   --dark-color: #262626;
-  --light-color: rgb(255, 255, 255);
-  --transparent-background: rgba(255, 255, 255, 0.127);
+  --light-color: rgb(234, 234, 234);
+  --transparent-background: rgba(0, 0, 0, 0.127);
 }
 
 /* global */
@@ -83,8 +83,6 @@ h3 {
 p {
   font-family: "Nunito", sans-serif;
   color: var(--light-color);
-  font-weight: 100;
-  font-size: 1rem;
 }
 
 /* header */
@@ -274,6 +272,11 @@ a + a {
 
 .details-image {
   position: relative;
+}
+
+.synopsis {
+  font-style: italic;
+  font-family: sans-serif;
 }
 
 #purchase-button {

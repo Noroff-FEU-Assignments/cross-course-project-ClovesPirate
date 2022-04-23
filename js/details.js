@@ -25,6 +25,7 @@ async function setup(url) {
                           </div>
                           <div class="details-body">
                             <h1>${movieDetails.name}</h1> 
+                            <strong class="synopsis">${movieDetails.short_description}</strong>
                             <p>${movieDetails.description}</p>
                                 <a href="#">
                                   ${movieDetails.categories[0].name}
