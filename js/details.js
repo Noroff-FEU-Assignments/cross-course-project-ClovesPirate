@@ -1,100 +1,64 @@
-import { simpleFetch } from "./utils/components.js";
+import { simpleFetch } from './utils/components.js';
 
-const detailsContainer = document.querySelector(".top-section");
-const suggestContainer = document.querySelector(".bottom-section");
-const errorMain = document.querySelector("main");
-const purchaseButton = document.querySelector(".purchase__button");
-
-const searchArray =["earth", "journey", "alien", "fly", "sad", "death", "dragon", "cat", "storm", "family", "avenger, "];
-const randomElement = [Math.floor(Math.random() * searchArray.length)];
-const searchParams = searchArray[randomElement];
-
-const options = { "headers": {
-  'X-RapidAPI-Host': 'imdb-data-searching.p.rapidapi.com',
-	"x-rapidapi-key": "9f4abe256cmshb615b7eda81776cp17607ajsn94b7372ba1af"
-}};
+const container = document.querySelector(".film-container");
+const suggestContainer = document.querySelector(".film-suggestions");
 
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
-const id = params.get("id");
+const filmID = params.get("id");
+console.log(filmID);
 
-const url = 'https://imdb-data-searching.p.rapidapi.com/om?i=' + id;
-const suggestionURL = 'https://imdb-data-searching.p.rapidapi.com/om?s=' + searchParams;
+const detailsURL = "https://cloverdesign.site/wordpress/wp-json/wc/store/v1/products/" + filmID;
 
+const baseURL = "https://cloverdesign.site/wordpress/wp-json/wc/store/v1/products";
 
-async function callDetails() {
+async function setup(url) {
+ const movieDetails = await simpleFetch(url);
+ console.log(movieDetails);
+
+ const price = movieDetails.prices.regular_price / 100;
+
+ container.innerHTML = `<div class="details-film">
+                          <div class"details-image">
+                            <img src="${movieDetails.images[0].src}">
+                          </div>
+                          <div class="details-body">
+                            <h1>${movieDetails.name}</h1> 
+                            <p>${movieDetails.description}</p>
+                                <a href="#">
+                                  ${movieDetails.categories[0].name}
+                                </a>
+                                <a href="#">
+                                  ${movieDetails.categories[1].name}
+                                </a>
+                              <div class="details-data">
+                                <button id="purchase-button">$ ${price}<img src="images/Forward-asset.svg"></button>
+                              </div>
+                        </div>`
+}
+
+setup(detailsURL);
+
+async function renderSuggestions(url) {
   try {
-  const movieDetails = await simpleFetch(url, options);
-  const movieSuggestions = await simpleFetch(suggestionURL, options);
-  console.log(movieSuggestions);
+    const movies = await simpleFetch(url);
+    console.log(movies);
 
-  console.log(movieDetails);
-  purchaseButton.style.display = "flex";
-  renderFilmDetails(movieDetails);
-  renderSuggestions(movieSuggestions.Search, suggestContainer);
+    movies.forEach(movie => {
+      console.log(movie.id);
+      suggestContainer.innerHTML += `<div class="film-card" style="background-image: url('${movie.images[0].src}')">
+                                <a href="details.html?id=${movie.id}">
+                                  <div class="anchor">
+                                  <h3>${movie.name}</h3>
+                                  </div
+                                </a>
+                              </div>`
+    });
   }
-  catch(error) {
+  catch (error) {
     errorMain.innerHTML = displayError();
     console.log(error);
   }
 };
 
-callDetails();
-
-function renderFilmDetails(movie) { 
-  const title = document.querySelector("title");
-  const nav = document.querySelector(".active-nav");
-  const description = document.querySelector('meta[content]');
-  detailsContainer.innerHTML = "";
-
-  title.innerHTML = `Square Eyes | ${movie.Title}`;
-  nav.innerHTML = `${movie.Title}`;
-  description.innerHTML = `Square Eyes | ${movie.Title}`;
-
-
-  // interacting with this from details.html  ---> data-modal-target="#purchase"
-  detailsContainer.innerHTML = `<div class="details__wrapper top"> 
-                                  <div class="details__card">
-                                    <div class="details__image flex">
-                                      <img src="${movie.Poster}" alt="${movie.Title}">
-                                    </div>
-                                    <div class="details__content">
-                                      <h2>${movie.Title}</h2>
-                                      <p class="top bold">${movie.Plot}</p>
-                                      <div class="data">
-                                        <p class="top">Actors: ${movie.Actors}</p>
-                                        <p> Genre: ${movie.Genre}</p>
-                                        <span> Released: ${movie.Year}  Runtime: ${movie.Runtime} </span>
-                                        <p> Director: <a href="creator_gregvernon.html">Greg Vernon</a>
-                                      </div> 
-                                    </div>
-                                  </div>
-                                </div>`
-};
-
-function renderSuggestions(arrey, container) {
-  container.innerHTML = "";
-  
-    for(let i = 0; i < arrey.length; i++) {
-  
-      if (i === 6) {
-        break;
-      }
-  
-      container.innerHTML += `
-                              <div class="card">
-                                <a href="details.html?id=${arrey[i].imdbID}">
-                                <div class="play__container">
-                                  <div class="play__info">
-                                    <img src="/images/square_eyes_play.png" alt="play-button">
-                                  </div>
-                                </div>
-                                  <img src="${arrey[i].Poster}" alt="${arrey[i].Title}">
-                                </a>
-                              </div>`
-    }
-  };
-
-  function displayError(message = "An error has occured. Please try again.") {
-    return `<div class="error">${message}<button onClick="window.location.reload();">Reload</button></div>`;
-  }
+renderSuggestions(baseURL)

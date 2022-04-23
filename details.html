@@ -3,100 +3,41 @@
     <head>
         <meta charset="UTF-8"/>
         <title>Square Eyes | Home</title>
-        <meta name="description" content=>
+        <meta name="description" content="Browse Independent Movies | Pay-per-view | Square Eyes">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/6b9295215b.js" crossorigin="anonymous"></script>
-        <link rel="preconnect" href="https://fonts.googleapis.com"> 
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet"> 
         <link href="css/styles.css" rel="stylesheet">
-         <script>
-        (function(h,o,t,j,a,r){
-            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-            h._hjSettings={hjid:2861126,hjsv:6};
-            a=o.getElementsByTagName('head')[0];
-            r=o.createElement('script');r.async=1;
-            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-            a.appendChild(r);
-            })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-        </script>
     </head>
     <body>
+        <div class="background-image">
         <header>
             <nav>
-                <a href="index.html"><img tabindex="0" src="images/square_eyes_logo.png" alt="logo" class="logo"></a>
                 <div class="nav__items">
-                    <a href="index.html">Browse</a>
-                    <a href="community.html">Community</a> 
-                    <button id="button-login" class="buttons" data-modal-target="#login">Log In<i class="fas fa-user"></i></button>
+                    <a href="index.html"><img src="images/square-eyes_logo.svg" alt="logo" class="logo"></a>
+                    <button id="button-login" class="buttons" data-modal-target="#login"><i class="fa fa-user profile" aria-hidden="true"></i> 
+                    </button>
                 </div>
             </nav>
         </header>
         <main>
-            <div class="modal" id="register">
-                <div class="modal-header">
-                    <div class="title bold">Register</div>
-                    <button data-close-button class="close-button">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <form  method="get" onsubmit="onSubmit()">
-                        <label for="user">Are you a:</label>
-                        <select name="user" id="user">
-                            <option value="Filmmaker">Film-maker</option>
-                            <option value="Filmenthusiast">Film-enthusiast</option>
-                        </select>
-                        <label class="margin-top-small" for="name-reg">Username</label>
-                        <input type="text" name="name-reg" id="name-reg" required minlength="5">
-                        <div class="errorMessage">Minimum 5 letters required</div>
-                        <label for="email-reg">Email</label>
-                        <input type="email" name="email-reg" id="email-reg" required>
-                        <div class="errorMessage">Please provide a valid email</div>
-                        <label for="pass-reg">Password</label>
-                        <input type="password" name="pass-reg" id="pass-reg" required minlength="7">
-                        <div class="errorMessage">Minimum 7 letters required</div>
-                        <button type="submit" class="form__button">Register</button>
-                    </form>
-                </div>
-            </div>
-            <div class="modal" id="login">
-                <div class="modal-header">
-                    <div class="title bold">Log In</div>
-                    <button data-close-button class="close-button">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <form action="#" method="post">
-                        <label class="margin-top-small" for="name">Username</label>
-                        <input type="text" name="name" id="name" required minlength="5">
-                        <div class="errorMessage">Required</div>
-                        <label for="pass">Password</label>
-                        <input type="password" name="pass" id="pass" required minlength="7">
-                        <div class="errorMessage">Required</div>
-                        <button class type="submit">Log In</button>
-                        <div class="flex">
-                            <p>Don't have an account?</p><button id="login-register" data-modal-target="#register" class="form__button">Register</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-                <div class="breadcrumb__nav">
-                    <a href="index.html"> <i class="fa fa-home" aria-hidden="true"></i>
-                      browse</a> | <a class="active-nav" href="community.html"></a>
-                  </div>
 
-            <section class="top-section flex">
+            <section class="films">
+                <div class="wrapper">
+                    <div class="film-container">
 
-                <div class="lds-facebook flex"><div></div><div></div><div></div></div>
+                    </div>
+                        <h2 class="suggest-header">Other Suggestions:</h2>
+                    <div class="film-suggestions">
+
+                    </div>
+                </div>
             </section>
-            <div class="button__container">
-                <button class="purchase__button" data-modal-target="#purchase"> $4.99 </button> 
-             </div>
-            <h2 class="margin-top-small">Suggested:</h2>
-            <div class="bottom-section flex">
-                <div class="lds-facebook"><div></div><div></div><div></div></div>
-            </div>
 
             <div id="overlay"></div>
-            <div class="modal" id="register"> <!-- register form modal -->
+            <div class="modal" id="register">
                 <div class="modal-header">
                     <div class="title bold">Register</div>
                     <button data-close-button class="close-button">&times;</button>
@@ -117,11 +58,11 @@
                         <label for="pass-reg">Password</label>
                         <input type="password" name="pass_reg" id="pass_reg" required minlength="7">
                         <div class="errorMessage">Minimum 7 letters required</div>
-                        <button data-modal-target="validated" type="submit" class="form__button">Register</button>
+                        <button data-modal-target="validated" type="submit" class="form__button buttons">Register</button>
                     </form>
                 </div>
             </div>
-            <div class="modal" id="login"> <!-- login form modal -->
+            <div class="modal" id="login">
                 <div class="modal-header">
                     <div class="title bold">Log In</div>
                     <button data-close-button class="close-button">&times;</button>
@@ -134,49 +75,30 @@
                         <label for="pass">Password</label>
                         <input type="password" name="pass" id="pass" required minlength="7">
                         <div class="errorMessage">Required</div>
-                        <button data-modal-target="validated" class type="submit">Log In</button>
+                        <button data-modal-target="validated" class="buttons" type="submit">Log In</button>
                         <div>
-                            <p>Don't have an account?</p><button id="login-register" data-modal-target="#register" class="form__button">Register</button>
+                            <p>Don't have an account?</p><button id="login-register" data-modal-target="#register" class="form__button buttons">Register</button>
                         </div>
                     </form>
                 </div>
             </div>
-            <div class="modal" id="purchase"> <!-- purchase form modal -->
-                <div class="modal-header">
-                    <div class="title bold">Credit card information</div>
-                    <button data-close-button class="close-button">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <form action="film.html" method="get" onsubmit="validateFilm()">
-                        <label for="name_card">Full Name</label>
-                        <input type="text" name="name_card" id="name_card" required minlength="1">
-                        <div class="errorMessage">As it appears on credit card</div>
-                        <label class="margin-top-small" for="cc_num">Creditcard number </label>
-                        <input type="text" name="cc_num" id="cc_num" required minlength="12" maxlength="12">
-                        <div class="errorMessage">e.g 1111222233334444 (12 digits)</div>
-                        <label for="expire">Expiration date</label>
-                        <input type="text" name="expire" id="expire" required minlength="7" maxlength="7">
-                        <div class="errorMessage">mm/yyyy</div>
-                        <label for="CVV">CVV</label>
-                        <input type="CVV" name="CVV" id="CVV" required minlength="3" maxlength="3">
-                        <div class="errorMessage">Must be 3 digits</div>
-                        <button type="submit" class="form__button">Confirm</button>
-                    </form>
-                </div>
-            </div>
         </main>
-        <footer class="top">
+        </div>
+        <footer>
+
             <div class="footer_contact">
                 <a aria-label="Contact" href="#"><i class="fas fa-envelope"></i></a>
                 <a aria-label="Twitter" href="#"><i class="fab fa-twitter-square"></i></a>
                 <a aria-label="Facebook" href="#"><i class="fab fa-facebook-square"></i></a>
                 <a aria-label="Instagram" href="#"><i class="fab fa-instagram-square"></i></a>
             </div>
+
             <div class="logo__container">
-            <a href="#"><img src="images/square_eyes_logo_extended.png" alt="logo"></a>
+                <a href="#"><img src="images/square-eyes_logo.svg" alt="logo"></a>
             </div>
         </footer>
-        <script src="js/forms.js"></script>
+
         <script type="module" src="js/details.js"></script>
+        <script src="js/forms.js"></script>
     </body>
 </html>
