@@ -19,8 +19,9 @@ async function setup(url) {
  const price = movieDetails.prices.regular_price / 100;
 
  container.innerHTML = `<div class="details-film">
-                          <div class"details-image">
+                          <div class="details-image">
                             <img src="${movieDetails.images[0].src}">
+                            <button id="purchase-button"><img class="play-button" src="images/play-button.svg"></button>
                           </div>
                           <div class="details-body">
                             <h1>${movieDetails.name}</h1> 
@@ -31,9 +32,6 @@ async function setup(url) {
                                 <a href="#">
                                   ${movieDetails.categories[1].name}
                                 </a>
-                              <div class="details-data">
-                                <button id="purchase-button">$ ${price}<img src="images/Forward-asset.svg"></button>
-                              </div>
                         </div>`
 }
 
