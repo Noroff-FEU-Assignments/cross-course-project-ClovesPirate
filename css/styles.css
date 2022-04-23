@@ -97,7 +97,7 @@ nav {
 }
 
 .nav__items {
-  margin-top: 1em;
+  margin-top: 2em;
   display: flex;
   width: 100%;
   color: var(--style-color);
@@ -109,7 +109,7 @@ nav {
   color: var(--light-color);
   font-size: 1rem;
   display: flex;
-  flex-direction: column;
+  align-items: center;
 }
 
 .buttons i {
@@ -117,6 +117,7 @@ nav {
   color: var(--light-color);
   background-color: var(--transparent-background);
   padding: .8em;
+  margin-left: 1em;
 }
 
 /* footer */
@@ -125,15 +126,13 @@ nav {
 
 .footer_contact {
   text-align: center;
-  margin: 2em;
 }
 
 footer a {
   color: var(--light-color);
   text-decoration: none;
-  font-size: 30px;
+  font-size: 2.5em;
   margin: 0 1%;
-  padding: 5px 15px;
   border-radius: 5px;
 }
 
@@ -150,7 +149,7 @@ footer img {
 }
 
 footer {
-  margin: 7em 0 4em;
+  margin: 4em 0 4em;
 }
 
 
@@ -464,6 +463,8 @@ hr {
   text-decoration: underline;
 }
 
+
+
 @media only screen and (max-width: 999px) {
 
   .details-body h1 {
@@ -472,7 +473,7 @@ hr {
 
   .nav__items {
     padding: 0 0 1em;
-    border-bottom: 1px solid var(--transparent-background);
+    border-bottom: 2px solid var(--transparent-background);
   }
 
   .hero {
@@ -487,15 +488,32 @@ hr {
     margin: 0 0;
   }
 
+}
+
+@media only screen and (max-width: 450px) {
+  
+  .nav__items {
+    margin-top: 1em;
+    padding: 0 0 .6em;
+  }
+
+  .logo {
+    height: 2rem;
+  }
+
+  #button-login i {
+    font-size: .9em;
+  }
+
+  .background-image {
+    background-position: 80%;
+  }
 
 }
 
 @media only screen and (min-width: 1000px) {
   .hero-container {
     max-width: 60%;
-  }
-  .nav__items {
-    margin-top: 7em;
   }
 
   .cta {
