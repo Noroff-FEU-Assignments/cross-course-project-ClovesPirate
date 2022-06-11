@@ -1,4 +1,4 @@
-# Cross course Project
+# Cross Course Project
 
 ![image](https://splendid-semifreddo-664fac.netlify.app/media/square-eyes.webp)
 
