@@ -32,7 +32,7 @@ This site is currently undergoing construction, but as for now it it constists o
 1. Clone the repo:
 
 ```bash
-[https://github.com/Noroff-FEU-Assignments/cross-course-project-ClovesPirate.git]
+https://github.com/Noroff-FEU-Assignments/cross-course-project-ClovesPirate.git
 ```
 
 ## Contact
