@@ -37,4 +37,4 @@ This site is currently undergoing construction, but as for now it it constists o
 
 ## Contact
 
-[My Email](truls.haakenstad@outlook.com)
+truls.haakenstad@outlook.com
