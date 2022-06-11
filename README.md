@@ -17,15 +17,16 @@ This site is currently undergoing construction, but as for now it it constists o
 - Clean and semantic HTML, DRY-principle code.
 - Make an appealing design following design principles.
 - UX design-principles
-- 
+
+
 ## Built With
 
 - [Wordpress (REST API)](https://wordpress.org/)
 - [Javascript]
 - [HTML 5]
 - [CSS 3]
-- [Adobe XD] (https://adobe.com/products/xd.html)
-- [Sketch] (https://sketch.com/)
+- [Adobe XD](https://adobe.com/products/xd.html)
+- [Sketch](https://sketch.com/)
 
 ### Installing
 1. Clone the repo:
