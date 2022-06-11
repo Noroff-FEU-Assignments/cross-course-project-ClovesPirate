@@ -1,6 +1,6 @@
 # Cross course Project
 
-![image]([https://user-images.githubusercontent.com/52622303/164316813-4b12d99f-aeb7-4069-85cf-e72b3a50ac99.png](https://splendid-semifreddo-664fac.netlify.app/media/square-eyes.webp)
+![image](https://splendid-semifreddo-664fac.netlify.app/media/square-eyes.webp)
 
 Square Eyes - independent film-streaming service
 This project have evolved over the course of the school year, from ideation to basic html and styling, UX-design principles and dynamic content and functionality using Javascript.
